@@ -1,13 +1,13 @@
-import React from "react";
+"use client";
 import Image from "next/image";
-import Logo from "../public/Logo.svg";
-import Logo_Title from "../public/L_T.svg";
-import Message from "../public/Message_Icon.svg";
-import Tel from "../public/Tel_Icon.svg";
-import Navigator from "../public/Icon_Navigator.svg";
-import Insta_Icon from "../public/Insta_Icon.svg";
-import Facebook_Icon from "../public/Facebook_Icon.svg";
-import Telegram_Icon from "../public/Telegram_Icon.svg";
+import Logo from "../../public/Logo.svg";
+import Logo_Title from "../../public/L_T.svg";
+import Message from "../../public/Message_Icon.svg";
+import Tel from "../../public/Tel_Icon.svg";
+import Navigator from "../../public/Icon_Navigator.svg";
+import Insta_Icon from "../../public/Insta_Icon.svg";
+import Facebook_Icon from "../../public/Facebook_Icon.svg";
+import Telegram_Icon from "../../public/Telegram_Icon.svg";
 
 const Index = () => {
   return (
@@ -15,8 +15,9 @@ const Index = () => {
       <div className="bg-[#FBD029] h-[24px]"></div>
 
       <div className=" bg-[#1F1D14] w-full h-[380px]">
-        <div className="container mx-auto px-10  max-w-1240">
+        <div className="container mx-auto px-10">
           <div className="flex">
+
             <div className="Logo">
               <div className="flex mt-[75px]">
                 <Image src={Logo} alt="Logo" />
@@ -30,17 +31,17 @@ const Index = () => {
               </div>
             </div>
 
-            <div>
+            <div className="contact">
               <div className="ml-[72px] mt-[73px]">
                 <p className="font-sans text-[18px] text-white font-[900px] ml-[35px]">
                   Контакты
                 </p>
 
-                <div className="flex  mt-[20px] ml-[32px]  text-white font-sans hover:text-slate-500 transition-all">
+                <div className="flex  mt-[20px] ml-[32px]  text-white font-sans hover:text-slate-500 transition-all w-full">
                   <Image src={Tel} alt="Telephone_Icon]" className="mt-[5px]" />
                   <p className="ml-[5px] text-[16px]">
                     +998 (90){" "}
-                    <span className="font-semibold text-[24px]">565-85-85</span>
+                    <span className="font-semibold text-[20px]">565-85-85</span>
                   </p>
                 </div>
 
@@ -50,12 +51,12 @@ const Index = () => {
                     alt="Message_Icon"
                     className="mt-[5px]"
                   />
-                  <p className="ml-[5px]">support@figma.com</p>
+                  <p className="ml-[5px] text-[16px]">support@figma.com</p>
                 </div>
               </div>
             </div>
 
-            <div>
+            <div className="location">
               <div className="flex gap-[13px] mt-[123px] ml-[130px]">
                 <Image src={Navigator} alt="Navigator_Icon" />
                 <p className="w-[232px] text-white font-sans">
@@ -65,7 +66,7 @@ const Index = () => {
             </div>
 
             <div className="inputs">
-              <div className="mt-[73px] ml-[280px]">
+              <div className="mt-[73px] ml-[130px]">
                 <p className="text-white text-[18px]">Подписатся</p>
                 <input
                   placeholder="support@figma.com"
@@ -78,7 +79,7 @@ const Index = () => {
                 </div>
               </div>
               <div className="icons">
-                <div className="flex gap-[20px] mt-[49px] ml-[280px] ">
+                <div className="flex gap-[20px] mt-[49px] ml-[130px] ">
                   <a href="https://www.instagram.com/">
                     <Image src={Insta_Icon} alt="Insta_icon" />
                   </a>
@@ -91,13 +92,15 @@ const Index = () => {
                 </div>
               </div>
             </div>
+
           </div>
         </div>
         <hr className="mt-[44px]" />
-        <div className="container mx-auto px-10  max-w-1240 flex gap-[720px] mt-[13px]">
+
+        <div className="container mx-auto px-10  max-w-1240 flex gap-[450px] mt-[13px]">
           <p className="text-white text-[12px] ">© 2022 All Rights Reserved</p>
 
-          <div className="flex text-[#7B7E86] gap-[40px] ">
+          <div className="flex text-[#7B7E86] gap-[40px] ml-[42px] ">
             <p className="text-[14px]">Privacy Policy</p>
             <p className="text-[14px]">Terms of Use</p>
             <p className="text-[14px]">Sales and Refunds</p>
@@ -105,6 +108,7 @@ const Index = () => {
             <p className="text-[14px]">Site Map</p>
           </div>
         </div>
+        
       </div>
     </>
   );
