@@ -1,9 +1,8 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from '@/components/header/header'
-import Footer from '@/components/footer/footer'
-
-
+import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
+import { Search } from "@/components/ui";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,20 +15,20 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-      <div className="bg-[#2B2B2B]">
+     
+
         <Header />
-        <div className="h-screen flex flex-col justify-between  bg-[#F2F2F2] ">
-        <main >
+        <Search/>
+
+        <main className=" bg-[#F2F2F2]">
           {children}
-        </main>
-        </div>
+          </main>
+     
+
         <Footer />
-        </div>
-        </body>
+      </body>
     </html>
-    
   );
 }
-
 
 // container mx-auto px-10 max-w-1240

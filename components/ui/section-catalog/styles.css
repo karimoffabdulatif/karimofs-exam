@@ -1,0 +1,47 @@
+
+#app {
+   
+  }
+  html,
+  body {
+    position: relative;
+    padding-bottom: 50px;
+  
+  
+  }
+  
+  body {
+  
+    font-size: 14px;
+
+  }
+  
+  .swiper {
+    width: 100%;
+ 
+  }
+
+  .mySnipper.swiper-slide {
+    transition: transform 1s linear; /* O'tish vaqtini sozlash */
+  }
+  
+  .MyBanner.swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mySnipper .swiper-pagination {
+  padding-bottom: -30px;
+  }
+  
+
+  
+
+  
+
+
+  
+
+  

@@ -97,7 +97,7 @@ const Index = () => {
         </div>
         <hr className="mt-[44px]" />
 
-        <div className="container mx-auto px-10  max-w-1240 flex gap-[450px] mt-[13px]">
+        <div className="container mx-auto px-10  max-w-1240 flex gap-[400px] mt-[13px]">
           <p className="text-white text-[12px] ">© 2022 All Rights Reserved</p>
 
           <div className="flex text-[#7B7E86] gap-[40px] ml-[42px] ">

@@ -6,6 +6,7 @@ import Logo_Title from "../../public/L_T.svg";
 import Message from "../../public/Message_Icon.svg";
 import Tel from "../../public/Tel_Icon.svg";
 
+
 const Index = () => {
   const links = [
     { path: "/products", title: "Продукты" },
@@ -21,12 +22,18 @@ const Index = () => {
         <div className="container mx-auto px-10  ">
           <div className="flex gap-[124px]">
             <div className=" flex  gap-[30px]">
-              <div className="flex">
-                <Image src={Logo} alt="Logo " />
+
+            <div className="flex cursor-pointer">
+                <Link href="/" className="flex">
+                <Image src={Logo} alt="Logo"/>
                 <div className="w-[107px]">
                   <Image src={Logo_Title} alt="Title" className="ml-[11px]" />
                 </div>
+                </Link>
               </div>
+
+              
+           
 
               {links.map((item, index) => {
                 return (
