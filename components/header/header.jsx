@@ -1,11 +1,10 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
-import Logo from  "../../public/Logo.svg";
+import Logo from "../../public/Logo.svg";
 import Logo_Title from "../../public/L_T.svg";
 import Message from "../../public/Message_Icon.svg";
 import Tel from "../../public/Tel_Icon.svg";
-
 
 const Index = () => {
   const links = [
@@ -22,18 +21,14 @@ const Index = () => {
         <div className="container mx-auto px-10  ">
           <div className="flex gap-[124px]">
             <div className=" flex  gap-[30px]">
-
-            <div className="flex cursor-pointer">
+              <div className="flex cursor-pointer">
                 <Link href="/" className="flex">
-                <Image src={Logo} alt="Logo"/>
-                <div className="w-[107px]">
-                  <Image src={Logo_Title} alt="Title" className="ml-[11px]" />
-                </div>
+                  <Image src={Logo} alt="Logo" />
+                  <div className="w-[107px]">
+                    <Image src={Logo_Title} alt="Title" className="ml-[11px]" />
+                  </div>
                 </Link>
               </div>
-
-              
-           
 
               {links.map((item, index) => {
                 return (

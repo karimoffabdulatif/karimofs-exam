@@ -5,21 +5,17 @@ import Home from "../../public/Icon_Home.svg";
 import Next from "../../public/Next_Page_Icon.svg";
 import Cadr from "../../public/Cadr_Icon.svg";
 import Lists from "../../public/Lists_Icon.svg";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import Jump from "../../public/Jumping.svg";
-import Gan from "../../public/Tosh.svg";
-import Sht from "../../public/Shtanga.svg";
-import Case from "../../public/Shopping_Icon.svg";
-
+import CardsComment from "../../components/ui/cards/cards-comment";
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import Cards from "../../components/ui/cards/cards";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
   const [isLiked, setIsLiked] = useState(false);
-  const [shownProducts, setShownProducts] = useState(15);
+  const [shownProducts, setShownProducts] = useState(6);
   const [value, setValue] = useState([20, 37]);
   const [products, setProducts] = useState([
     { id: 1, name: "Product 1", price: 100 },
@@ -31,22 +27,25 @@ const Index = () => {
     { id: 7, name: "Product 7", price: 700 },
     { id: 8, name: "Product 8", price: 800 },
     { id: 9, name: "Product 9", price: 900 },
-    { id: 10, name: "Product 10", price: 1000 },
-    { id: 11, name: "Product 11", price: 1100 },
-    { id: 12, name: "Product 12", price: 1200 },
-    { id: 13, name: "Product 13", price: 1300 },
-    { id: 14, name: "Product 14", price: 1400 },
-    { id: 15, name: "Product 15", price: 1500 },
-    { id: 16, name: "Product 16", price: 1600 },
-    { id: 17, name: "Product 17", price: 1700 },
-    { id: 18, name: "Product 18", price: 1800 },
-    { id: 19, name: "Product 19", price: 1900 },
-    { id: 20, name: "Product 20", price: 2000 },
-    { id: 21, name: "Product 21", price: 2100 },
   ]);
 
+  const [comments, setComments] = useState([
+    { id: 1, text: "Great product!", author: "Alice" },
+    { id: 2, text: "Really enjoyed using this.", author: "Bob" },
+    { id: 3, text: "Highly recommend it to everyone.", author: "Charlie" },
+    { id: 4, text: "Worth the price.", author: "Dave" },
+    { id: 5, text: "Fantastic quality!", author: "Eve" },
+  ]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleMore = () => {
-    setShownProducts((prev) => Math.min(prev + 15, products.length));
+    setShownProducts((prev) => Math.min(prev + 6, products.length));
   };
 
   const handleLikeClick = () => {
@@ -59,6 +58,14 @@ const Index = () => {
 
   function valuetext(value) {
     return `${value} uzs`;
+  }
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <p className="text-[30px] font-medium">Загрузка...</p>
+      </div>
+    );
   }
 
   return (
@@ -114,8 +121,6 @@ const Index = () => {
                   Все
                 </option>
                 <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
               </select>
 
               <p className="text-[14px] font-medium pt-[16px]">Новинка:</p>
@@ -124,8 +129,6 @@ const Index = () => {
                   Все
                 </option>
                 <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
               </select>
 
               <p className="text-[14px] font-medium pt-[16px]">Акция:</p>
@@ -134,8 +137,6 @@ const Index = () => {
                   Все
                 </option>
                 <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
               </select>
             </div>
           </div>
@@ -154,16 +155,12 @@ const Index = () => {
                   Сортировать
                 </option>
                 <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
               </select>
               <select className="w-[147px] bg-white px-[15px] py-[7px] rounded-md">
                 <option value="all" className="font-semibold">
                   Все продукты
                 </option>
                 <option value="option1">Option 1</option>
-                <option value="option2">Option 2</option>
-                <option value="option3">Option 3</option>
               </select>
             </div>
 
@@ -204,122 +201,10 @@ const Index = () => {
       <p className="text-[32px] font-medium mb-[60px]">
         Реконмендуемые продукты
       </p>
-      <div className="flex gap-[27px] pb-[200px]">
-        <div>
-          <div className="w-[270px] bg-white rounded-t-md relative pt-4">
-            <FavoriteBorderIcon
-              className={`absolute top-3 right-3 cursor-pointer ${
-                isLiked ? "text-red-500" : "text-gray-500"
-              }`}
-              onClick={handleLikeClick}
-            />
-            <Image src={Jump} alt="image" className="mt-[15px] w-[200px]" />
-            <div className="ml-[20px] mt-[10px]">
-              <p className="text-[17px] font-sans w-[216px] font-medium">
-                Бутса Nike Mercurial Superfly 8 FG
-              </p>
-              <p className="text-[20px] text-[#FF1313] font-sans font-bold mt-[5px]">
-                500 000 uzs
-              </p>
-              <span className="text-[16px] line-through text-slate-500">
-                750 000
-              </span>
-            </div>
-          </div>
-          <div>
-            <button className="flex w-[270px] p-4 rounded-b-md bg-[#FBD029] items-center justify-center font-normal hover:bg-[#dcbb4e]">
-              <Image src={Case} alt="Shop_Icon" />
-              Корзина
-            </button>
-          </div>
-        </div>
-
-        <div>
-          <div className="w-[270px] bg-white rounded-t-md relative pt-4">
-            <FavoriteBorderIcon
-              className={`absolute top-3 right-3 cursor-pointer ${
-                isLiked ? "text-red-500" : "text-gray-500"
-              }`}
-              onClick={handleLikeClick}
-            />
-            <Image src={Sht} alt="image" className="mt-[15px] w-[200px]" />
-            <div className="ml-[20px] mt-[10px]">
-              <p className="text-[17px] font-sans w-[216px] font-medium">
-                Бутса Nike Mercurial Superfly 8 FG
-              </p>
-              <p className="text-[20px] text-[#FF1313] font-sans font-bold mt-[5px]">
-                500 000 uzs
-              </p>
-              <span className="text-[16px] line-through text-slate-500">
-                750 000
-              </span>
-            </div>
-          </div>
-          <div>
-            <button className="flex w-[270px] p-4 rounded-b-md bg-[#FBD029] items-center justify-center font-normal hover:bg-[#dcbb4e]">
-              <Image src={Case} alt="Shop_Icon" />
-              Корзина
-            </button>
-          </div>
-        </div>
-
-        <div>
-          <div className="w-[270px] bg-white rounded-t-md relative pt-4">
-            <FavoriteBorderIcon
-              className={`absolute top-3 right-3 cursor-pointer ${
-                isLiked ? "text-red-500" : "text-gray-500"
-              }`}
-              onClick={handleLikeClick}
-            />
-            <Image src={Gan} alt="image" className="mt-[15px] w-[200px]" />
-            <div className="ml-[20px] mt-[10px]">
-              <p className="text-[17px] font-sans w-[216px] font-medium">
-                Бутса Nike Mercurial Superfly 8 FG
-              </p>
-              <p className="text-[20px] text-[#FF1313] font-sans font-bold mt-[5px]">
-                500 000 uzs
-              </p>
-              <span className="text-[16px] line-through text-slate-500">
-                750 000
-              </span>
-            </div>
-          </div>
-          <div>
-            <button className="flex w-[270px] p-4 rounded-b-md bg-[#FBD029] items-center justify-center font-normal hover:bg-[#dcbb4e]">
-              <Image src={Case} alt="Shop_Icon" />
-              Корзина
-            </button>
-          </div>
-        </div>
-
-        <div>
-          <div className="w-[270px] bg-white rounded-t-md relative pt-4">
-            <FavoriteBorderIcon
-              className={`absolute top-3 right-3 cursor-pointer ${
-                isLiked ? "text-red-500" : "text-gray-500"
-              }`}
-              onClick={handleLikeClick}
-            />
-            <Image src={Jump} alt="image" className="mt-[15px] w-[200px]" />
-            <div className="ml-[20px] mt-[10px]">
-              <p className="text-[17px] font-sans w-[216px] font-medium">
-                Бутса Nike Mercurial Superfly 8 FG
-              </p>
-              <p className="text-[20px] text-[#FF1313] font-sans font-bold mt-[5px]">
-                500 000 uzs
-              </p>
-              <span className="text-[16px] line-through text-slate-500">
-                750 000
-              </span>
-            </div>
-          </div>
-          <div>
-            <button className="flex w-[270px] p-4 rounded-b-md bg-[#FBD029] items-center justify-center font-normal hover:bg-[#dcbb4e]">
-              <Image src={Case} alt="Shop_Icon" />
-              Корзина
-            </button>
-          </div>
-        </div>
+      <div className="Comments flex gap-4 mt-5 ">
+        {comments.slice(4).map((comment) => (
+          <CardsComment key={comment.id} {...comment} />
+        ))}
       </div>
     </div>
   );

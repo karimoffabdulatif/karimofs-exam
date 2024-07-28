@@ -33,11 +33,11 @@ export default function Index() {
             clickable: true,
           }}
           autoplay={{
-            delay: 1000, 
+           
             disableOnInteraction: false,
             stopOnLastSlide: false,
           }}
-          speed={1000} 
+          speed={5000} 
           modules={[Pagination, Autoplay]}
           loop={"false"}
           className="mySwiper"

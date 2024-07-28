@@ -24,11 +24,11 @@ export default function Index() {
                   clickable: true,
                 }}
                 autoplay={{
-                  delay: 1000, 
+                  delay: 0, 
                   disableOnInteraction: false,
                   stopOnLastSlide: false,
                 }}
-                speed={1000} 
+                speed={6000} 
                 modules={[ Autoplay]}
                 loop={"false"}
                 className="mySnip"

@@ -21,11 +21,13 @@ const Index = () => {
           className={`absolute top-3 right-3 cursor-pointer ${isLiked ? "text-red-500" : "text-gray-500"}`}
           onClick={handleLikeClick}
         /> 
-        <Image 
+       <div className="flex justify-center">
+       <Image 
           src={Bag} 
           alt="image" 
           className="mt-[15px] w-[200px]" 
         /> 
+       </div>
         <div className="ml-[20px] mt-[10px]"> 
           <p className="text-[17px] font-sans w-[216px] font-medium"> 
             Бутса Nike Mercurial Superfly 8 FG 
