@@ -31,4 +31,3 @@ export default function RootLayout({ children }) {
   );
 }
 
-// container mx-auto px-10 max-w-1240

@@ -11,17 +11,17 @@ const Index = () => {
   });
 
   return (
-    <section className="container mx-auto px-10">
+    <section className="container">
       <p className="text-[32px] font-medium pt-[86px] mb-6">Полезное</p>
-      <div className="Cards flex gap-[24px]">
-        <div className="w-[688px] bg-white rounded-lg">
-          <p className="w-[462px] ml-[35px] text-[32px] font-semibold pt-[38px]">
+      <div className=" flex gap-[24px] justify-between my-6 max-lg:grid max-lg:grid-cols-1 max-lg:justify-items-center ">
+        <div className="max-w-[608px] w-full bg-white rounded-lg p-9">
+          <h3 className=" text-[32px] font-semibold ">
             Как правильно выбрать эллиптический тренажер?
-          </p>
-          <p className="text-[16px] w-[454px] ml-[35px] opacity-70 pt-[9px]">
+          </h3>
+          <p className="text-[16px]  opacity-70 pt-[9px]">
             Эллиптические тренажёры популярны среди людей любого возраста и с разным уровнем физической подготовки...
           </p>
-          <div className="flex gap-[39px] pt-[125px] ml-[35px]">
+          <div className="flex gap-[39px] mt-[120px]">
             <div className="flex gap-1">
               <Image src={Data} alt="Data_Icon" />
               <p>{currentDate}</p>
@@ -32,11 +32,11 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <div>
-          <div className="w-[638px] bg-white h-[350px] rounded-lg">
-            <Image src={Bicycle} alt="Img_Treyn" className="pt-[18px] ml-[145px]" />
+        <div className="max-w-[608px] w-full">
+          <div className=" bg-white py-[18px] px-6 flex justify-center rounded-lg">
+            <Image src={Bicycle} alt="Img_Treyn" className="max-w-[508px] " />
           </div>
-          <button className="w-[638px] text-[16px] mt-[15px] rounded-md bg-white p-4 hover:bg-yellow-300 transition-all">
+          <button className=" w-full text-[16px] mt-[15px] rounded-md bg-white p-4 hover:bg-yellow-300 transition-all">
             Посмотрет все
           </button>
         </div>

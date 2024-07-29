@@ -3,9 +3,9 @@ import Image from "next/image";
 import Left_Icon from "../../../public/Left_icon.svg";
 const Index = () => {
   return (
-    <section className="Abaut  container mx-auto px-10 pb-[80px]">
+    <section className="Abaut  container ">
       <p className="text-[32px] font-medium  mb-6">О нас</p>
-      <div className="w-[1160px] bg-[#1F1D14] rounded-lg">
+      <div className="w-full bg-[#1F1D14] rounded-lg mb-[100px]">
         <p className="w-[710px] text-white text-[20px] pt-[70px] ml-[80px]">
           Интернет магазин спортивных товаров{" "}
           <span className="font-semibold underline">7MARKETSPORT.UZ</span>{" "}

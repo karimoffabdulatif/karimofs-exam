@@ -18,8 +18,8 @@ const Index = () => {
   return (
     <header>
       <div className="justify-end flex gap-4 pt-3 pb-3 bg-[#1F1D14] w-full h-[79px]">
-        <div className="container mx-auto px-10  ">
-          <div className="flex gap-[124px]">
+        <div className="container   ">
+          <div className="flex justify-between gap-[124px]">
             <div className=" flex  gap-[30px]">
               <div className="flex cursor-pointer">
                 <Link href="/" className="flex">

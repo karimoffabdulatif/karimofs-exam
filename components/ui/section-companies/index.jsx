@@ -14,8 +14,8 @@ import "./styles.css"
 
 export default function Index() {
   return (
-    <section className="Companies container mx-auto px-10 pb-[80px]">
-      <div className="bg-white rounded-lg ">
+    <section className="Companies container pt-[50px] mx-auto px-10 pb-[100px]">
+      <div className="bg-white rounded-lg mb-[80px] ">
         <Swiper
                 slidesPerView={"7"}
                 centeredSlides={true}

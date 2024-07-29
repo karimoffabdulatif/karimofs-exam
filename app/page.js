@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <main>
         <Banner />
-        <Calatog />
+        <Calatog/> 
         <Action />
         <Usefull/>
         <Advantages/>

@@ -1,13 +1,15 @@
+"use client"
 import Image from "next/image";
 import Category_Icon from "../../../public/Search_Section_Icon.svg";
 import Search_Icon from "../../../public/Icon_Search.svg";
 import User_Icon from "../../../public/User_Icon.svg";
 import Like_Icon from "../../../public/Like_icon.svg";
 import Shop_Icon from "../../../public/Shopping_Icon.svg";
+import Link from "next/link";
 
 const Index = () => {
   return (
-    <div className="bg-white w-full h-[80px]">
+    <div className="bg-white w-full p-[15px]">
       <div className="container mx-auto px-10 ">
         <div className="flex gap-[100px]">
           <div className="mt-[13px] flex gap-2">
@@ -34,7 +36,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="mt-[13px] flex ">
+          <div className="mt-[13px] flex ml-[85px] ">
             <div className="flex mt-[8px] gap-[13px] ml-[100px]  ">
               <button className="bg-[#F2F2F2] w-11 h-11 rounded-[3px] flex items-center justify-center hover:bg-yellow-300 transition-all ">
                 <Image src={User_Icon} alt="User_Icon" />
@@ -45,14 +47,18 @@ const Index = () => {
               </button>
             </div>
 
-            <button className="bg-[#F2F2F2] ml-[25px] w-[165px] h-[53px] rounded-[3px] flex items-center justify-center size-5 mt-[2px] hover:bg-yellow-300 transition-all">
+           
+           <Link href="/basket">
+           <button className="bg-[#F2F2F2] ml-[25px] w-[165px] h-[53px] rounded-[3px] flex items-center justify-center size-5 mt-[2px] hover:bg-yellow-300 transition-all">
               <Image src={Shop_Icon} alt="Shopping_Icon" />
               Корзина
             </button>
+           </Link>
+           </div>
           </div>
         </div>
       </div>
-    </div>
+   
   );
 };
 

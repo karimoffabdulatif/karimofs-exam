@@ -28,7 +28,7 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="container mx-auto px-10">
+    <div className="container">
       {loading ? (
         <div className="flex justify-center items-center h-screen">
           <p className="text-[30px] font-medium">Загрузка...</p>

@@ -9,9 +9,9 @@ const Index = () => {
     <section className="container mx-auto px-10 pb-[80px]">
       <p className="text-[32px] font-medium pt-[86px] mb-6">Примущества</p>
 
-        <div className="flex gap-6 ">
+        <div className="flex gap-6 mb-[100px] ">
             
-        <div className="bg-white w-[292px] h-[289px] rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
+        <div className="bg-white w-[292px]  rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
   <div className="pt-[64px] ml-[72px] relative">
     <div className="w-[26px] h-[26px] bg-[#FBD029] rounded-lg"></div>
     <Image
@@ -28,7 +28,7 @@ const Index = () => {
 
 
 
-        <div className="bg-white w-[292px] h-[289px] rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
+        <div className="bg-white w-[292px]  rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
           <div className="pt-[64px] ml-[72px] relative ">
             <div className="w-[26px] h-[26px] bg-[#FBD029] rounded-lg"></div>
             <Image
@@ -43,7 +43,7 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="bg-white w-[292px] h-[289px] rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
+        <div className="bg-white w-[292px]  rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
           <div className="pt-[64px] ml-[72px] relative ">
             <div className="w-[26px] h-[26px] bg-[#FBD029] rounded-lg"></div>
             <Image
@@ -59,7 +59,7 @@ const Index = () => {
         </div>
 
 
-        <div className="bg-white w-[292px] h-[289px] rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
+        <div className="bg-white w-[292px]  rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
           <div className="pt-[64px] ml-[72px] relative ">
             <div className="w-[26px] h-[26px] bg-[#FBD029] rounded-lg"></div>
             <Image
