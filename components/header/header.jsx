@@ -5,6 +5,7 @@ import Logo from "../../public/Logo.svg";
 import Logo_Title from "../../public/L_T.svg";
 import Message from "../../public/Message_Icon.svg";
 import Tel from "../../public/Tel_Icon.svg";
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Index = () => {
   const links = [
@@ -18,9 +19,9 @@ const Index = () => {
   return (
     <header>
       <div className="justify-end flex gap-4 pt-3 pb-3 bg-[#1F1D14] w-full h-[79px]">
-        <div className="container   ">
-          <div className="flex justify-between gap-[124px]">
-            <div className=" flex  gap-[30px]">
+        <div className="container">
+          <div className="flex justify-between items-center">
+            <div className=" flex gap-12  items-center">
               <div className="flex cursor-pointer">
                 <Link href="/" className="flex">
                   <Image src={Logo} alt="Logo" />
@@ -30,34 +31,39 @@ const Index = () => {
                 </Link>
               </div>
 
+              <div className="gap-[30px] lg:flex hidden">
               {links.map((item, index) => {
                 return (
                   <Link
                     href={item.path}
                     key={index}
-                    className="text-[16px] text-white font-sans hover:text-yellow-300 transition-all mt-[12px] "
+                    className="text-[14px] text-white font-sans hover:text-yellow-300 transition-all "
                   >
                     {item.title}
                   </Link>
                 );
               })}
+              </div>
             </div>
 
-            <div className="flex gap-[30px]">
-              <div className="flex  mt-[12px]  text-white font-sans hover:text-yellow-300 transition-all">
-                <Image src={Tel} alt="Telephone_Icon]" className="mt-[-15px]" />
-                <p className="ml-[5px]">+998 (90) 565-85-85</p>
+            <div className="md:flex gap-[30px] hidden">
+              <div className="flex  text-white font-sans hover:text-yellow-300 transition-all items-center space-x-2">
+                <Image src={Tel} alt="Telephone_Icon]" className="" />
+                <p className="">+998 (90) 565-85-85</p>
               </div>
 
-              <div className="flex  mt-[12px]  text-white font-sans hover:text-yellow-300 transition-all">
+              <div className="flex  text-white font-sans hover:text-yellow-300 transition-all items-center space-x-2">
                 <Image
                   src={Message}
                   alt="Message_Icon"
-                  className="mt-[-15px]"
+                  className=""
                 />
-                <p className="ml-[5px]">info@gmail.com</p>
+                <p className="">info@gmail.com</p>
               </div>
             </div>
+              <div className="text-white md:hidden">
+              <MenuIcon/>
+              </div>
           </div>
         </div>
       </div>

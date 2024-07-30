@@ -73,7 +73,7 @@ const Index = () => {
                   className="bg-white mt-[16px] w-[235px] h-[40px] rounded-[5px] border-[1px] border-slate-400 p-[16px]"
                 />
                 <div className="button">
-                  <button className="bg-[#FBD029] w-[235px] h-[40px] rounded-[5px] mt-[16px] text-[16px] font-normal hover:bg-[#E0B627]">
+                  <button className="bg-[#FBD029] hover:bg-[#a08c3d] w-[235px] h-[40px] rounded-[5px] mt-[16px] text-[16px] font-normal hover:bg-[#E0B627]">
                     Отправить
                   </button>
                 </div>
