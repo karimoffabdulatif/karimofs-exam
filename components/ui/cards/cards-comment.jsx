@@ -16,8 +16,8 @@ const Index = () => {
     };
   return (
     <div>
-       <div className="flex gap-[27px] pb-[200px]">
-        <div>
+       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-[27px] pb-[200px]">
+        <div className="">
           <div className="w-[270px] bg-white rounded-t-md relative pt-4">
             <FavoriteBorderIcon
               className={`absolute top-3 right-3 cursor-pointer ${

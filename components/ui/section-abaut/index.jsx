@@ -1,12 +1,12 @@
 import Image from "next/image";
-
 import Left_Icon from "../../../public/Left_icon.svg";
+
 const Index = () => {
   return (
-    <section className="Abaut  container ">
-      <p className="text-[32px] font-medium  mb-6">О нас</p>
-      <div className="w-full bg-[#1F1D14] rounded-lg mb-[100px]">
-        <p className="w-[710px] text-white text-[20px] pt-[70px] ml-[80px]">
+    <section className="Abaut container mx-auto px-4 sm:px-6 lg:px-8">
+      <p className="text-[24px] sm:text-[32px] font-medium mb-6">О нас</p>
+      <div className="w-full bg-[#1F1D14] rounded-lg mb-[100px] p-6 sm:p-10 lg:p-14">
+        <p className="text-white text-[16px] sm:text-[18px] lg:text-[20px] leading-relaxed">
           Интернет магазин спортивных товаров{" "}
           <span className="font-semibold underline">7MARKETSPORT.UZ</span>{" "}
           предлагает широкий ассортимент продукции с доставкой по Ташкенту,
@@ -16,11 +16,11 @@ const Index = () => {
           скидок. Разнообразие форм оплаты заметно упрощает процесс приобретения
           товара. Действует гибкая система скидок.
         </p>
-        <div className="pt-[25px] pb-[50px] ">
+        <div className="pt-[25px] pb-[50px] flex justify-center sm:justify-end">
           <Image
             src={Left_Icon}
             alt="Left_Icon"
-            className="ml-auto mr-[110px]"
+            className="w-[50px] h-[50px] sm:w-auto sm:h-auto"
           />
         </div>
       </div>

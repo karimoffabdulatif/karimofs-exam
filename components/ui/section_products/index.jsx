@@ -22,24 +22,26 @@ const Index = () => {
   };
 
   return (
-    <section className="Action container ">
-      <p className="text-[32px] font-medium pt-[86px] mb-6">Продукты</p>
-      <div className="flex flex-wrap justify-between space-y-3">
+    <section className="Action container mx-auto px-4 sm:px-6 lg:px-8">
+      <p className="text-[24px] sm:text-[32px] font-medium pt-[86px] mb-6">Продукты</p>
+      <div className="flex flex-wrap justify-between pl-[35px] gap-4">
         {products.slice(0, visibleProducts).map(product => (
-          <Card key={product.id} title={product.title} description={product.description} />
+          <div key={product.id} className="w-full sm:w-[48%] lg:w-[30%] xl:w-[22%]">
+            <Card title={product.title} description={product.description} />
+          </div>
         ))}
       </div>
  
-<div className="flex items-center justify-center pt-6 pb-6">
-{visibleProducts < products.length && (
-         <button
-         onClick={handleShowMore}
-         className="w-[209px] p-[15px]  border-[#FBD029]  hover:bg-yellow-300 transition-all hover:font-semibold font-medium border-[3px] rounded-[5px] flex items-center justify-center"
-       >
-         Показать ещё
-       </button>
-      )}
-</div>
+      <div className="flex items-center justify-center pt-6 pb-6">
+        {visibleProducts < products.length && (
+          <button
+            onClick={handleShowMore}
+            className="w-[209px] p-[15px] border-[#FBD029] hover:bg-yellow-300 transition-all hover:font-semibold font-medium border-[3px] rounded-[5px] flex items-center justify-center"
+          >
+            Показать ещё
+          </button>
+        )}
+      </div>
     </section>
   );
 };
