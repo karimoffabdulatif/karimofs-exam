@@ -54,15 +54,15 @@ const Index = () => {
           </div>
 
           <div className="flex gap-[24px] flex-col md:flex-row">
-            <div className="w-full md:w-[187px] bg-white rounded-lg">
+            <div className="w-full h-[100px] lg:h-[300px] md:w-[187px] bg-white rounded-lg">
               <div className="flex gap-1 pb-[289px] pt-[18px] ml-[9px]">
                 <Image src={Yellow} alt="Tik" />
                 <p className="text-[16px] font-medium">Контакты</p>
               </div>
             </div>
 
-            <div className="w-full md:w-[714px] bg-white rounded-lg">
-              <p className="text-[24px] font-semibold pt-[40px] ml-[50px]">
+            <div className="w-full  md:w-[714px] bg-white rounded-lg">
+              <p className="text-[18px] lg:text-[24px] font-semibold pt-[40px] ml-[50px]">
               Номер телефона
               </p>
               <p className="text-[16px] w-full md:w-[598px] ml-[50px] pt-[17px]">
@@ -70,18 +70,18 @@ const Index = () => {
               </p>
              
 
-              <p className="text-[24px] font-semibold pt-[40px] ml-[50px]">
+              <p className="text-[18px] lg:text-[24px] font-semibold pt-[40px] ml-[50px]">
               Адрес. Электронная почта
               Uzum в соцсетях
               </p>
               <p className="text-[16px] w-full md:w-[598px] ml-[50px] pt-[17px]">
               info@gmail.com
               </p>
-              <p className="text-[24px] font-semibold pt-[40px] ml-[50px]">
+              <p className="text-[18px] lg:text-[24px] mb-[40px] font-semibold pt-[40px] ml-[50px]">
               {`"Sport Market" в соцсетях`}
               </p>
 
-              <div className="flex gap-[20px] pl-16 py-10 justify-center">
+              <div className="hidden lg:gap-[20px] mb-[20px] lg:flex justify-start pl-8">
                 <a href="https://www.instagram.com/">
                   <InstagramIcon className="text-black w-[70px]" />
                 </a>
@@ -97,7 +97,7 @@ const Index = () => {
 
           <div className="pt-[60px]">
             <p className="text-[32px] font-medium mb-6">Акция</p>
-            <div className="flex flex-wrap gap-4 justify-center">
+            <div className="flex justify-center lg:flex flex-wrap gap-[100px] lg:justify-start">
               {actions.slice(4).map((action) => (
                 <Action_Card key={action.id} {...action} />
               ))}
