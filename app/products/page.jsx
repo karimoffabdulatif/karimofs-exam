@@ -95,7 +95,9 @@ const Index = () => {
                   min={0}
                   max={1000}
                   step={10}
-                  sx={{ color: "#FBD029", width: "170px", marginLeft: "15px" }}
+                  sx={{ color: "#FBD029",  xs: "100%", 
+                    sm: "100%",
+                    md: "170px", }}
                 />
                 <div className="flex p-3 justify-between mt-2 text-sm font-semibold">
                   <span>{`${value[0]} uzs`}</span>

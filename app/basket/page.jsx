@@ -21,7 +21,7 @@ const Index = () => {
   const [products, setProducts] = useState([
     {
       id: 1,
-      name: "Гантель виниловая, 2 х 3 кг Гантель",
+      name: "Гантель виниловая ",
       price: 300000,
       initialCount: 1,
       image: Gan,
@@ -199,30 +199,30 @@ const ProductCard = ({ product, onCountChange }) => {
   };
 
   return (
-    <div className="w-[655px] ml-[30px] bg-[#F2F2F2] flex gap-[60px] mb-[20px]">
+    <div className="w-[655px] ml-[30px] bg-[#F2F2F2] flex gap-[60px] mb-[20px] rounded-lg shadow-md ">
       <div className="pt-[10px] p-3">
-        <Image src={product.image} alt={product.name} className="w-[160px]" />
+        <Image src={product.image} alt={product.name} className="w-[160px] h-[160px] object-cover rounded-md" />
       </div>
-      <div className="pt-[19px]">
-        <p className="w-[292px] text-[20px] mb-[30px]">{product.name}</p>
+      <div className="pt-[19px] flex-1">
+        <p className="w-[292px] text-[20px] mb-[70px] font-semibold">{product.name}</p>
         <div className="flex gap-[40px]">
-          <div className="flex gap-3 mt-[15px]">
+          <div className="flex items-center gap-3 ">
             <button
               onClick={() => handleCountChange(count > 1 ? count - 1 : count)}
-              className="text-[24px] bg-white rounded-full w-[33px]"
+              className="w-[40px] h-[40px] bg-white border border-gray-300 rounded-full flex items-center justify-center text-[24px] text-gray-700 hover:bg-gray-100 transition-all"
             >
               -
             </button>
             <p className="text-[18px] mt-1">{count}</p>
             <button
               onClick={() => handleCountChange(count + 1)}
-              className="text-[24px] bg-white rounded-full w-[33px]"
+              className="w-[40px] h-[40px] bg-white border border-gray-300 rounded-full flex items-center justify-center text-[24px] text-gray-700 hover:bg-gray-100 transition-all"
             >
               +
             </button>
           </div>
 
-          <div className="flex gap-1">
+          <div className="flex gap-1 items-center">
             <p className="text-[22px] font-bold">
               {totalPrice.toLocaleString()}
             </p>
@@ -231,7 +231,7 @@ const ProductCard = ({ product, onCountChange }) => {
         </div>
       </div>
 
-      <div className="bg-white w-10 h-10 rounded-full flex items-center justify-center  mt-4">
+      <div className="bg-white w-10 h-10 rounded-full flex items-center justify-center  mt-4 hover:bg-gray-100 transition-all">
         <Image src={Delete} alt="Delete-Icon" className="w-6 h-6" />
       </div>
     </div>
