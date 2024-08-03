@@ -69,23 +69,23 @@ const Index = () => {
   }
 
   return (
-    <div className="container mx-auto px-10">
+    <div className="container mx-auto px-4 md:px-10">
       <div className="flex gap-2 pt-[27px] pb-[20px]">
-        <Link href="/" className="flex gap-2">
-          <Image src={Home} alt="Home_Icon" />
+        <Link href="/" className="flex gap-2 items-center">
+          <Image src={Home} alt="Home_Icon" className="w-6 h-6" />
           <p className="text-black opacity-60 text-[16px]">Главная</p>
         </Link>
-        <Image src={Next} alt="Next_Page_Icon" />
+        <Image src={Next} alt="Next_Page_Icon" className="w-6 h-6" />
         <p className="text-black text-[16px] font-medium">Продукты</p>
       </div>
 
-      <div className="Big div flex gap-[24px]">
-        <div className="filter">
-          <div className="bg-white pb-[38px] w-[292px] rounded-lg">
-            <p className="text-[16px] font-medium pt-5 ml-[18px]">Филтрь</p>
-            <p className="text-[12px] font-normal pt-5 ml-[18px]">Цена</p>
-            <div className="bg-[#F2F2F2] w-[256px] ml-[18px] rounded-md flex items-center justify-center mt-[10px]">
-              <Box sx={{ width: 147 }}>
+      <div className="flex flex-col md:flex-row md:gap-8">
+        <div className="md:w-[300px] w-full">
+          <div className="bg-white p-4 rounded-lg">
+            <p className="text-[16px] font-medium">Филтрь</p>
+            <p className="text-[12px] font-normal mt-4">Цена</p>
+            <div className="bg-[#F2F2F2] w-full rounded-md flex items-center justify-center mt-2">
+              <Box sx={{ width: 1 }}>
                 <Slider
                   getAriaLabel={() => "Price range"}
                   value={value}
@@ -93,70 +93,60 @@ const Index = () => {
                   valueLabelDisplay="auto"
                   getAriaValueText={valuetext}
                   min={0}
-                  max={100}
-                  step={1}
-                  sx={{
-                    color: "#FBD029",
-                  }}
+                  max={1000}
+                  step={10}
+                  sx={{ color: "#FBD029", width: "170px", marginLeft: "15px" }}
                 />
-                <div className="flex justify-between mt-2">
-                  <span className="font-semibold">{`${value[0]} uzs`}</span>
-                  <span className="font-semibold">{`${value[1]} uzs`}</span>
+                <div className="flex p-3 justify-between mt-2 text-sm font-semibold">
+                  <span>{`${value[0]} uzs`}</span>
+                  <span>{`${value[1]} uzs`}</span>
                 </div>
               </Box>
             </div>
 
-            <div className="pt-[16px] ml-[18px]">
+            <div className="mt-4">
               <p className="text-[14px] font-medium">Артикул:</p>
               <input
                 type="text"
                 placeholder="аф566"
-                className="w-[256px] bg-[#F2F2F2] p-3 rounded-lg mt-[10px]"
+                className="w-full bg-[#F2F2F2] p-3 rounded-lg mt-2"
               />
-              <p className="text-[14px] font-medium pt-[16px]">
-                Выберите категорию:
-              </p>
-              <select className="w-[256px] bg-[#F2F2F2] p-3 rounded-lg mt-[10px]">
-                <option value="all" className="opacity-100">
-                  Все
-                </option>
+              <p className="text-[14px] font-medium mt-4">Выберите категорию:</p>
+              <select className="w-full bg-[#F2F2F2] p-3 rounded-lg mt-2">
+                <option value="all">Все</option>
                 <option value="option1">Option 1</option>
               </select>
 
-              <p className="text-[14px] font-medium pt-[16px]">Новинка:</p>
-              <select className="w-[256px] bg-[#F2F2F2] p-3 rounded-lg mt-[10px]">
-                <option value="all" className="opacity-100">
-                  Все
-                </option>
+              <p className="text-[14px] font-medium mt-4">Новинка:</p>
+              <select className="w-full bg-[#F2F2F2] p-3 rounded-lg mt-2">
+                <option value="all">Все</option>
                 <option value="option1">Option 1</option>
               </select>
 
-              <p className="text-[14px] font-medium pt-[16px]">Акция:</p>
-              <select className="w-[256px] bg-[#F2F2F2] p-3 rounded-lg mt-[10px]">
-                <option value="all" className="opacity-100">
-                  Все
-                </option>
+              <p className="text-[14px] font-medium mt-4">Акция:</p>
+              <select className="w-full bg-[#F2F2F2] p-3 rounded-lg mt-2">
+                <option value="all">Все</option>
                 <option value="option1">Option 1</option>
               </select>
             </div>
           </div>
-          <div className="pb-[10px]">
-            <button className="w-[292px] p-5 bg-[#E4E4E4] rounded-bl-lg rounded-br-lg text-[15px] font-medium">
+          <div className="mt-4">
+            <button className="w-full p-4 bg-[#E4E4E4] rounded-bl-lg rounded-br-lg text-[15px] font-medium">
               Показать результат
             </button>
           </div>
         </div>
 
-        <div>
-          <div className="Card w-full flex gap-[331px] items-start">
-            <div className="flex gap-[25px] items-center">
-              <select className="w-[147px] bg-white px-[15px] py-[7px] rounded-md">
+        <div className="w-full">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex gap-2 items-center">
+              <select className="w-full md:w-[147px] bg-white px-3 py-2 rounded-md">
                 <option value="all" className="font-semibold">
                   Сортировать
                 </option>
                 <option value="option1">Option 1</option>
               </select>
-              <select className="w-[147px] bg-white px-[15px] py-[7px] rounded-md">
+              <select className="w-full md:w-[147px] bg-white px-3 py-2 rounded-md">
                 <option value="all" className="font-semibold">
                   Все продукты
                 </option>
@@ -164,33 +154,29 @@ const Index = () => {
               </select>
             </div>
 
-            <div className="flex gap-[8px] items-center">
-              <div className="bg-white flex w-[93px] rounded-lg px-[15px] py-[7px] items-center">
+            <div className="flex gap-2 items-center">
+              <div className="bg-white flex w-full md:w-[93px] rounded-lg px-3 py-2 items-center">
                 <p className="text-[16px] pl-2">Кард</p>
-                <Image src={Cadr} alt="Cadr_Icon" className="ml-[10px]" />
+                <Image src={Cadr} alt="Cadr_Icon" className="ml-2 w-6 h-6" />
               </div>
 
-              <div className="bg-white flex w-[93px] px-[15px] py-[7px] rounded-lg items-center">
-                <p className="text-[16px] opacity-80 pl-2 ">Лист</p>
-                <Image
-                  src={Lists}
-                  alt="Cadr_Icon"
-                  className="opacity-80 ml-[10px]"
-                />
+              <div className="bg-white flex w-full md:w-[93px] px-3 py-2 rounded-lg items-center">
+                <p className="text-[16px] opacity-80 pl-2">Лист</p>
+                <Image src={Lists} alt="Lists_Icon" className="opacity-80 ml-2 w-6 h-6" />
               </div>
             </div>
           </div>
 
-          <div className="Products_Table grid gap-4 mt-5  grid-cols-3">
+          <div className="flex flex-wrap justify-between mt-5 mb-4">
             {products.slice(0, shownProducts).map((product) => (
               <Cards key={product.id} {...product} />
             ))}
           </div>
           {shownProducts < products.length && (
-            <div className="pt-[15px] pb-[110px]">
+            <div >
               <button
                 onClick={handleMore}
-                className="w-full p-[15px] text-[16px] font-semibold bg-white hover:bg-yellow-300 transition-all hover:font-semibold  border-[3px] rounded-[5px] flex items-center justify-center"
+                className="w-full p-4 mb-[50px] text-[16px] font-semibold bg-white hover:bg-yellow-300 transition-all border rounded-md flex items-center justify-center"
               >
                 Показать ещё
               </button>
@@ -198,10 +184,9 @@ const Index = () => {
           )}
         </div>
       </div>
-      <p className="text-[32px] font-medium mb-[60px]">
-        Реконмендуемые продукты
-      </p>
-      <div className="Comments flex gap-4 mt-5 ">
+
+      <p className="text-[32px] font-medium mb-14">Реконмендуемые продукты</p>
+      <div className="flex flex-wrap gap-5">
         {comments.slice(4).map((comment) => (
           <CardsComment key={comment.id} {...comment} />
         ))}

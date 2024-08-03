@@ -15,7 +15,7 @@ const Index = () => {
   };
 
   return ( 
-    <section> 
+    <section className="mb-[18px]"> 
       <div className='w-[270px] bg-white rounded-t-md relative pt-4'> 
         <FavoriteBorderIcon
           className={`absolute top-3 right-3 cursor-pointer ${isLiked ? "text-red-500" : "text-gray-500"}`}

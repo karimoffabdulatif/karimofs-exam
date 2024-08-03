@@ -21,7 +21,7 @@ const Index = () => {
   };
 
   return (
-    <div className="bg-white w-full p-4 sm:p-6 md:p-[15px]">
+    <div className="bg-white w-full p-4 mb-[50px] sm:p-6 md:p-[15px]">
       <div className="container mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">

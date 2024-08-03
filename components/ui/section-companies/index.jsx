@@ -59,12 +59,15 @@ export default function Index() {
                   key={index}
                   className="flex items-center justify-center"
                 >
-                  <Image
-                    src={logo}
-                    alt={`Logo ${index}`}
-                    className=""
-                    style={{width: "100px", height: "100px"}}
-                  />
+                  <div className="flex items-center justify-center w-[100px] h-[100px]">
+                    <Image
+                      src={logo}
+                      alt={`Logo ${index}`}
+                      width={100}
+                      height={100}
+                      className="object-contain"
+                    />
+                  </div>
                 </SwiperSlide>
               ))}
             </Swiper>
