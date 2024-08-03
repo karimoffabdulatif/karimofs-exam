@@ -53,21 +53,19 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="Big Div flex gap-[24px]">
-            <div>
-              <div className="w-[187px] bg-white rounded-lg">
-                <div className="flex gap-1 pb-[289px] pt-[18px] ml-[9px]">
-                  <Image src={Yellow} alt="Tik" />
-                  <p className="text-[16px] font-medium">Контакты</p>
-                </div>
+          <div className="flex gap-[24px] flex-col md:flex-row">
+            <div className="w-full md:w-[187px] bg-white rounded-lg">
+              <div className="flex gap-1 pb-[289px] pt-[18px] ml-[9px]">
+                <Image src={Yellow} alt="Tik" />
+                <p className="text-[16px] font-medium">Контакты</p>
               </div>
             </div>
 
-            <div className="w-[714px] bg-white rounded-lg">
+            <div className="w-full md:w-[714px] bg-white rounded-lg">
               <p className="text-[24px] font-semibold pt-[40px] ml-[50px]">
               Номер телефона
               </p>
-              <p className="text-[16px] w-[598px] ml-[50px] pt-[17px]">
+              <p className="text-[16px] w-full md:w-[598px] ml-[50px] pt-[17px]">
               +998 (90) 565-85-85
               </p>
              
@@ -76,30 +74,30 @@ const Index = () => {
               Адрес. Электронная почта
               Uzum в соцсетях
               </p>
-              <p className="text-[16px] w-[598px] ml-[50px] pt-[17px]">
+              <p className="text-[16px] w-full md:w-[598px] ml-[50px] pt-[17px]">
               info@gmail.com
               </p>
               <p className="text-[24px] font-semibold pt-[40px] ml-[50px]">
               {`"Sport Market" в соцсетях`}
               </p>
 
-              <div className="flex gap-[20px]  pl-16 py-10 ">
-                  <a href="https://www.instagram.com/">
-                    <InstagramIcon  className="text-black w-[70px] "/>
-                  </a>
-                  <a href="https://www.facebook.com/">
-                    <FacebookIcon className="text-black" />
-                  </a>
-                  <a href="https://t.me/ak_0_001">
-                    <TelegramIcon className="text-black" />
-                  </a>
-                </div>
+              <div className="flex gap-[20px] pl-16 py-10 justify-center">
+                <a href="https://www.instagram.com/">
+                  <InstagramIcon className="text-black w-[70px]" />
+                </a>
+                <a href="https://www.facebook.com/">
+                  <FacebookIcon className="text-black" />
+                </a>
+                <a href="https://t.me/ak_0_001">
+                  <TelegramIcon className="text-black" />
+                </a>
+              </div>
             </div>
           </div>
 
-          <div className="Aksiya pt-[60px]">
+          <div className="pt-[60px]">
             <p className="text-[32px] font-medium mb-6">Акция</p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 justify-center">
               {actions.slice(4).map((action) => (
                 <Action_Card key={action.id} {...action} />
               ))}
@@ -112,4 +110,3 @@ const Index = () => {
 };
 
 export default Index;
-

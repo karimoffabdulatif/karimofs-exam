@@ -58,7 +58,6 @@ const Index = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-
     const timer = setTimeout(() => {
       setLoading(false);
     }, 1000); 
@@ -71,25 +70,25 @@ const Index = () => {
   };
 
   return (
-    <div className="container mx-auto px-10">
+    <div className="container mx-auto px-4 md:px-10">
       {loading ? (
         <div className="flex justify-center items-center w-full h-screen">
-          <p className="text-[30px] font-medium">Загрузка...</p> 
+          <p className="text-[24px] md:text-[30px] font-medium">Загрузка...</p> 
         </div>
       ) : (
         <>
-          <div className="flex gap-2 pt-[27px] pb-[20px]">
+          <div className="flex gap-2 pt-[20px] md:pt-[27px] pb-[20px] lg:mb-[40px]">
             <Link href="/" className="flex gap-2">
               <Image src={Home} alt="Home_Icon" />
-              <p className="text-black opacity-60 text-[16px]">Главная</p>
+              <p className="text-black opacity-60 text-[14px] md:text-[16px]">Главная</p>
             </Link>
             <Image src={Next} alt="Next_Page_Icon" />
-            <p className="text-black text-[16px] font-medium">Полезные информации</p>
+            <p className="text-black text-[14px] md:text-[16px] font-medium">Полезные информации</p>
           </div>
 
-          <p className="text-[32px] font-medium mb-6">Полезные информации</p>
+          <p className="text-[24px] md:text-[32px] font-medium mb-6">Полезные информации</p>
 
-          <div className="grid grid-cols-2 gap-6 pb-[30px]">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-[30px]">
             {cardsData.slice(0, cards).map((card, index) => (
               <Cards
                 key={index}
@@ -102,18 +101,18 @@ const Index = () => {
           </div>
 
           {cards < cardsData.length && (
-            <div className="pt-[15px] pb-[80px]">
+            <div className="pt-[15px] pb-[40px] md:pb-[80px] flex justify-center">
               <button
                 onClick={handleMore}
-                className="w-[209px] p-[15px] border-[#FBD029] hover:bg-yellow-300 transition-all hover:font-semibold font-medium border-[3px] rounded-[5px] flex items-center justify-center"
+                className="w-[209px] p-[10px] md:p-[15px] border-[#FBD029] hover:bg-yellow-300 transition-all hover:font-semibold font-medium border-[3px] rounded-[5px] flex items-center justify-center"
               >
                 Показать ещё
               </button>
             </div>
           )}
-          <div className="pb-[80px]">
-            <p className="text-[32px] font-medium mb-6">Акция</p>
-            <div className="flex flex-wrap gap-6">
+          <div className="pb-[40px] md:pb-[80px]">
+            <p className="text-[24px] md:text-[32px] font-medium mb-6">Акция</p>
+            <div className="flex flex-wrap justify-center gap-8 md:justify-start">
               {products.map(product => (
                 <Product_Cards key={product.id} title={product.title} description={product.description} />
               ))}

@@ -133,7 +133,7 @@ const Index = () => {
             </div>
           </div>
           <div className="mt-4">
-            <button className="mb-[30px]  md:w-full p-4 bg-[#E4E4E4] rounded-bl-lg rounded-br-lg text-[15px] font-medium">
+            <button className="w-full mb-[30px]  md:w-full p-4 bg-[#E4E4E4] rounded-bl-lg rounded-br-lg text-[15px] font-medium">
               Показать результат
             </button>
           </div>
@@ -169,16 +169,16 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-between mt-5 mb-4">
+          <div className="flex justify-center md:flex flex-wrap md:justify-between mt-5 mb-4">
             {products.slice(0, shownProducts).map((product) => (
               <Cards key={product.id} {...product} />
             ))}
           </div>
           {shownProducts < products.length && (
-            <div >
+            <div className="mb-[70px] md:hidden">
               <button
                 onClick={handleMore}
-                className="w-full p-4 mb-[50px] text-[16px] font-semibold bg-white hover:bg-yellow-300 transition-all border rounded-md flex items-center justify-center"
+                className="w-full p-4 md:mb-[50px] text-[16px] font-semibold bg-white hover:bg-yellow-300 transition-all border rounded-md flex items-center justify-center"
               >
                 Показать ещё
               </button>
@@ -187,8 +187,8 @@ const Index = () => {
         </div>
       </div>
 
-      <p className="text-[32px] font-medium mb-14">Реконмендуемые продукты</p>
-      <div className="flex flex-wrap gap-5">
+      <p className="flex justify-center text-[25px] md:text-[32px] font-medium mb-14">Реконмендуемые продукты</p>
+      <div className="flex justify-center md:flex flex-wrap gap-5">
         {comments.slice(4).map((comment) => (
           <CardsComment key={comment.id} {...comment} />
         ))}

@@ -25,8 +25,8 @@ const Index = () => {
       <div className="container mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
-            <button className="bg-black w-full sm:w-auto p-3 sm:p-4 md:p-[11px] text-[16px] sm:text-[18px] md:text-[20px] hover:bg-yellow-300 hover:text-black transition-all gap-2 text-white rounded-[5px] flex items-center justify-center space-x-2">
-              <Image src={Category_Icon} alt="Icon" className="hover:text-black" />
+            <button className=" lg: bg-black lg:w-full sm:w-auto p-3 sm:p-4 md:p-[11px] text-[16px] sm:text-[18px] md:text-[20px] hover:bg-yellow-300 hover:text-black transition-all gap-2 text-white rounded-[5px] flex items-center justify-center space-x-2">
+              <Image src={Category_Icon} alt="Icon" className="hidden lg: hover:text-black" />
               Каталог
             </button>
             <div className="flex w-full sm:w-[100px] md:w-auto">

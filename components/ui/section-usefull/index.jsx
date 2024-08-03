@@ -12,7 +12,7 @@ const Index = () => {
 
   return (
     <section className="container">
-      <p className="text-[32px] font-medium pt-[86px] mb-6">Полезное</p>
+      <p className="flex justify-center text-[] md:text-[32px] font-medium pt-[86px] mb-6">Полезное</p>
       <div className=" flex gap-[24px] justify-between my-6 max-lg:grid max-lg:grid-cols-1 max-lg:justify-items-center ">
         <div className="max-w-[608px] w-full bg-white rounded-lg p-9">
           <h3 className=" text-[32px] font-semibold ">

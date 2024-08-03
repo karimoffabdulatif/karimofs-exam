@@ -10,15 +10,15 @@ const Index = () => {
   });
 
   return (
-    <div>
-      <div className="w-[560px] bg-white rounded-lg">
-        <p className="w-[462px] ml-[35px] text-[32px] font-semibold pt-[38px]">
+    <div className="flex justify-center">
+      <div className="w-full max-w-[560px] lg:mb-[40px] bg-white rounded-lg mx-4 md:mx-auto">
+        <p className=" text-[18px] flex text-start ml-[18px] lg:w-full lg:pl-14 max-w-[462px]  mx-auto lg:text-[24px] md:text-[32px] font-semibold pt-[20px] md:pt-[38px]">
           Как правильно выбрать эллиптический тренажер?
         </p>
-        <p className="text-[16px] w-[454px] ml-[35px] opacity-70 pt-[9px]">
+        <p className="text-[14px] p-5 md:text-[16px] w-full max-w-[454px] mx-auto opacity-70 pt-[9px]">
           Эллиптические тренажёры популярны среди людей любого возраста и с разным уровнем физической подготовки. Эллиптические тренажёры популярны среди людей любого возраста и с разным уровнем физической подготовки...
         </p>
-        <div className="flex gap-[39px] pt-[100px] pb-[45px] ml-[35px]">
+        <div className="flex  gap-[20px] justify-start pl-6 lg:pl-20 md:gap-[39px] pt-[50px] md:pt-[100px] pb-[25px] md:pb-[45px] mx-auto lg:justify-start md:justify-start">
           <div className="flex gap-1">
             <Image src={Data} alt="Data_Icon" />
             <p>{currentDate}</p>
