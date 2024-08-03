@@ -21,7 +21,7 @@ const Index = () => {
   };
 
   return (
-    <div className="bg-white w-full p-4 mb-[50px] sm:p-6 md:p-[15px]">
+    <div className="bg-white w-full p-4 sm:p-6 md:p-[15px]">
       <div className="container mx-auto">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
@@ -29,7 +29,7 @@ const Index = () => {
               <Image src={Category_Icon} alt="Icon" className="hover:text-black" />
               Каталог
             </button>
-            <div className="flex w-full sm:w-auto">
+            <div className="flex w-full sm:w-[100px] md:w-auto">
               <input
                 type="Search"
                 placeholder="Поиск"

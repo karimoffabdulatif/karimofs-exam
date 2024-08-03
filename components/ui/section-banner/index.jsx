@@ -17,7 +17,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 export default function Index() {
   return (
     <div className="container mx-auto px-10 pt-[10px] pb-[100px] mt-[20px]">
-      <div className="w-full h-[350px] mt-[20px] mb-[80px]">
+      <div className="w-full h-[350px] mt-[50px] mb-[80px]">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
