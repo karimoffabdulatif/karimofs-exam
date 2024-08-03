@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
@@ -30,8 +30,8 @@ const Index = () => {
 
   return (
     <header>
-      <div className="justify-end flex gap-4 pt-3 pb-3 bg-[#1F1D14] w-full h-[79px]">
-        <div className="container">
+      <div className="pt-3 pb-3 bg-[#1F1D14] w-full h-[79px]">
+        <div className="container mx-auto px-4">
           <div className="flex justify-between items-center">
             <div className="flex gap-12 items-center">
               <div className="flex cursor-pointer">
@@ -44,29 +44,27 @@ const Index = () => {
               </div>
 
               <div className="gap-[30px] lg:flex hidden">
-                {links.map((item, index) => {
-                  return (
-                    <Link
-                      href={item.path}
-                      key={index}
-                      className="text-[14px] text-white font-sans hover:text-yellow-300 transition-all"
-                    >
-                      {item.title}
-                    </Link>
-                  );
-                })}
+                {links.map((item, index) => (
+                  <Link
+                    href={item.path}
+                    key={index}
+                    className="text-[14px] text-white font-sans hover:text-yellow-300 transition-all"
+                  >
+                    {item.title}
+                  </Link>
+                ))}
               </div>
             </div>
 
             <div className="md:flex gap-[30px] hidden">
               <div className="flex text-white font-sans hover:text-yellow-300 transition-all items-center space-x-2">
-                <Image src={Tel} alt="Telephone_Icon" className="" />
-                <p className="">+998 (90) 565-85-85</p>
+                <Image src={Tel} alt="Telephone_Icon" />
+                <p>+998 (90) 565-85-85</p>
               </div>
 
               <div className="flex text-white font-sans hover:text-yellow-300 transition-all items-center space-x-2">
-                <Image src={Message} alt="Message_Icon" className="" />
-                <p className="">info@gmail.com</p>
+                <Image src={Message} alt="Message_Icon" />
+                <p>info@gmail.com</p>
               </div>
             </div>
             <div className="text-white md:hidden">

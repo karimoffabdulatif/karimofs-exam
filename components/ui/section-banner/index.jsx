@@ -16,8 +16,8 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 export default function Index() {
   return (
-    <div className="container mx-auto px-10 pt-[10px] pb-[100px] mt-[20px]">
-      <div className="w-full h-[350px] mt-[50px] mb-[80px]">
+    <div className=" mx-auto px-2 container lg:mx-auto lg:pt-[10px] pb-[40px] lg:mt-[20px]">
+      <div className=" mb-[-130px] lg:w-full h-[350px] mt-[50px] lg:mb-[80px]">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
@@ -35,17 +35,17 @@ export default function Index() {
           className="myBanner"
         >
           <SwiperSlide>
-            <div className="rounded-[15px] overflow-hidden">
+            <div className="rounded-lg lg:rounded-[15px] overflow-hidden">
               <Image src={Banner1} alt="..." />
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="rounded-[15px] overflow-hidden">
+            <div className="rounded-lg lg:rounded-[15px] overflow-hidden">
               <Image src={Banner2} alt="..." />
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="rounded-[15px] overflow-hidden">
+            <div className="rounded-lg lg:rounded-[15px] overflow-hidden">
               <Image src={Banner3} alt="..." />
             </div>
           </SwiperSlide>

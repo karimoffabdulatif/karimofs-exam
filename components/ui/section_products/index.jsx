@@ -23,8 +23,8 @@ const Index = () => {
 
   return (
     <section className="Action container mx-auto px-4 sm:px-6 lg:px-8">
-      <p className="flex justify-center text-[24px] font-semibold md:text-[24px] sm:text-[32px] md:font-medium pt-[86px] mb-6">Продукты</p>
-      <div className="flex flex-wrap justify-between pl-[35px] gap-4">
+      <p className="flex justify-center text-[24px] font-semibold  lg:flex lg:justify-start lg:text-[36px] lg:font-medium md:text-[24px] sm:text-[32px] md:font-medium pt-[86px] mb-6">Продукты</p>
+      <div className="flex justify-center pl-[25px] lg:flex flex-wrap lg:justify-between lg:gap-4">
         {products.slice(0, visibleProducts).map(product => (
           <div key={product.id} className="w-full sm:w-[48%] lg:w-[30%] xl:w-[22%]">
             <Card title={product.title} description={product.description} />

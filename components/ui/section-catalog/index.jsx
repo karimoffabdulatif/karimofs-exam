@@ -22,7 +22,7 @@ export default function Index() {
     <div className="bg-white pb-16">
       <div className="container mx-auto px-4 sm:px-10">
         <div className="pt-7 pb-7">
-          <p className="text-[24px] sm:text-[32px] font-medium">Катаолог</p>
+          <p className="text-[24px] lg:text-[36px] font-medium">Катаолог</p>
         </div>
 
         <Swiper

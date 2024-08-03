@@ -72,7 +72,7 @@ const Index = () => {
   };
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto px-4 md:px-10">
       <div className="flex gap-2 pt-[20px] pb-[20px]">
         <Link href="/" className="flex gap-2">
           <Image src={Home} alt="Home_Icon" />
@@ -82,16 +82,17 @@ const Index = () => {
         <p className="text-black text-[16px] font-medium">Корзина</p>
       </div>
 
-      <div className="flex gap-[24px]">
-        <div className="w-[713px] bg-white rounded-lg mb-[60px]">
-          <div className="flex pt-[20px] p-7">
+      <div className="flex flex-col md:flex-row gap-[24px]">
+        <div className="w-full md:w-[700px] lg:p-[20px] bg-white rounded-lg mb-[60px]">
+          <div className="pt-[20]  lg:flex lg:pt-[20px] p-7">
             <p className="text-[24px] font-semibold">Ваша корзина</p>
             <p className="text-[12px] text-[#FF1313] font-medium pt-[8px] ml-auto pr-3">
               Очистить все
             </p>
           </div>
 
-          {products.map((product) => (
+       <div className="">
+       {products.map((product) => (
             <ProductCard
               key={product.id}
               product={product}
@@ -100,31 +101,28 @@ const Index = () => {
               }
             />
           ))}
+       </div>
 
           <div className="pt-[63px] pl-[32px]">
             <p className="text-[20px] font-medium text-[#06F] underline">
               Все информация о доставке
             </p>
-            <p className="text-[20px] w-[385px] pb-[60px]">
+            <p className="text-[20px] w-full md:w-[385px] pb-[60px]">
               Если у вас имеются вопросы позаоните по номеру:{" "}
               <span className="text-[#06F] fort-medium">+998940017653</span>
             </p>
           </div>
         </div>
 
-        <div className="w-[504px] bg-white rounded-lg p-6 self-start">
+        <div className=" mb-8 lg:w-full md:w-[504px] bg-white rounded-lg p-6 self-start">
           <p className="text-[20px] font-semibold">Итого</p>
-          <div className="flex gap-[150px]">
+          <div className="flex justify-between gap-4 md:gap-[150px]">
             <div>
-              <p className="text-[20px] font-medium w-[200px]">
-                Кол-во товаров:
-              </p>
-              <p className="text-[20px] font-medium w-[20px]">
-                {getTotalCount()}
-              </p>
+              <p className="text-[20px] font-medium">Кол-во товаров:</p>
+              <p className="text-[20px] font-medium">{getTotalCount()}</p>
             </div>
             <div>
-              <p className="text-[20px] font-medium w-[63px]">Сумма:</p>
+              <p className="text-[20px] font-medium">Сумма:</p>
               <p className="text-[22px] font-bold">
                 {getTotalPrice().toLocaleString()}
               </p>
@@ -136,14 +134,14 @@ const Index = () => {
             <p className="text-[16px] pt-[24px] mb-[8px]">Имя /Фамиля</p>
             <input
               placeholder="Имя /Фамиля"
-              className="w-[414px] p-[16px] rounded-[5px] bg-[#F2F2F2]"
+              className="w-full md:w-[414px] p-[16px] rounded-[5px] bg-[#F2F2F2]"
             />
             <div>
               <p className="text-[16px] pt-[24px] mb-[8px]">Ваш номер</p>
               <input
                 type="tel"
                 placeholder="+998__- __ - __ - __"
-                className="w-[414px] p-[16px] rounded-[5px] bg-[#F2F2F2]"
+                className="w-full md:w-[414px] p-[16px] rounded-[5px] bg-[#F2F2F2]"
                 pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
                 required
               />
@@ -153,9 +151,9 @@ const Index = () => {
               <div className="flex">
                 <input
                   placeholder="Область/город/улица/дом"
-                  className="w-[350px] p-[16px] rounded-[5px]  bg-[#F2F2F2]"
+                  className="w-full md:w-[350px] p-[16px] rounded-[5px]  bg-[#F2F2F2]"
                 />
-                <button className="Location btn" onClick={() => setIsLocationModalOpen(true)}>
+                <button className="Location btn ml-2" onClick={() => setIsLocationModalOpen(true)}>
                   <Image src={Location} alt="Yellow_Location" />
                 </button>
               </div>
@@ -177,7 +175,7 @@ const Index = () => {
             </div>
 
             <div className="mb-[50px]">
-              <button className="bg-[#FBD029]  hover:bg-yellow-300 transition-all w-[424px] p-4 rounded-md text-[24px] font-semibold">Купить</button>
+              <button className="bg-[#FBD029]  hover:bg-yellow-300 transition-all w-full md:w-[424px] p-4 rounded-md text-[24px] font-semibold">Купить</button>
             </div>
           </div>
         </div>
@@ -199,13 +197,13 @@ const ProductCard = ({ product, onCountChange }) => {
   };
 
   return (
-    <div className="w-[655px] ml-[30px] bg-[#F2F2F2] flex gap-[60px] mb-[20px] rounded-lg shadow-md ">
-      <div className="pt-[10px] p-3">
-        <Image src={product.image} alt={product.name} className="w-[160px] h-[160px] object-cover rounded-md" />
+    <div className="w-full md:w-[655px] ml-0  lg:pr-[20px]  bg-[#F2F2F2] flex flex-col md:flex-row gap-[20px] md:gap-[60px] mb-[20px] rounded-lg shadow-md p-4 md:p-0">
+      <div className="pt-[10px] p-3 flex-shrink-0">
+        <Image src={product.image} alt={product.name} className="w-[160px] h-[160px] object-cover rounded-md mx-auto md:mx-0" />
       </div>
       <div className="pt-[19px] flex-1">
-        <p className="w-[292px] text-[20px] mb-[70px] font-semibold">{product.name}</p>
-        <div className="flex gap-[40px]">
+        <p className="flex justify-center lg:w-full lg:flex lg:justify-start md:w-[292px] text-[20px] mb-[20px] md:mb-[70px] font-semibold">{product.name}</p>
+        <div className="flex flex-col md:flex-row gap-4 md:gap-[40px] items-center">
           <div className="flex items-center gap-3 ">
             <button
               onClick={() => handleCountChange(count > 1 ? count - 1 : count)}
@@ -231,9 +229,11 @@ const ProductCard = ({ product, onCountChange }) => {
         </div>
       </div>
 
-      <div className="bg-white w-10 h-10 rounded-full flex items-center justify-center  mt-4 hover:bg-gray-100 transition-all">
+<div className="flex justify-center lg:pt-4">
+<div className=" flex justify-center lg: bg-white w-10 h-10 rounded-full lg:flex items-center lg:justify-center mt-4 md:mt-0 md:ml-auto hover:bg-gray-100 transition-all">
         <Image src={Delete} alt="Delete-Icon" className="w-6 h-6" />
       </div>
+</div>
     </div>
   );
 };
