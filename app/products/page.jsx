@@ -133,7 +133,7 @@ const Index = () => {
             </div>
           </div>
           <div className="mt-4">
-            <button className="w-full p-4 bg-[#E4E4E4] rounded-bl-lg rounded-br-lg text-[15px] font-medium">
+            <button className="mb-[30px]  md:w-full p-4 bg-[#E4E4E4] rounded-bl-lg rounded-br-lg text-[15px] font-medium">
               Показать результат
             </button>
           </div>
