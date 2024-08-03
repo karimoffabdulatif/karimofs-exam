@@ -61,7 +61,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="w-full  md:w-[714px] bg-white rounded-lg">
+            <div className="w-full pr-[20px]  md:w-[714px] bg-white rounded-lg">
               <p className="text-[18px] lg:text-[24px] font-semibold pt-[40px] ml-[50px]">
               Номер телефона
               </p>
