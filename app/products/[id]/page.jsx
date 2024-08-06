@@ -18,7 +18,7 @@ import { getProductId } from "@/sevice/product.service";
 const Index = () => {
   const { id } = useParams();
   const [products, setProducts] = useState([]);
-  const [comments, setComments] = useState([]);
+  const [commentsProduct, setCommentsProduct] = useState([]);
 
   const fetchProduct = useCallback(async () => {
     try {
@@ -26,7 +26,7 @@ const Index = () => {
         const productId = Array.isArray(id) ? id[0] : id;
         const response = await getProductId(productId);
         const commentResponse = await getComment(1, 4, productId);
-        setComments(commentResponse.Comment || []);
+        setCommentsProduct(commentResponse.Comment || []);
         setProducts(Array.isArray(response) ? response : [response]);
       }
     } catch (error) {
@@ -40,7 +40,7 @@ const Index = () => {
 
   return (
     <div className="container mx-auto px-4">
-      <div className="flex gap-2 pt-5 pb-5">
+      <div className="flex flex-wrap gap-2 pt-5 pb-5">
         <Link href="/" className="flex gap-2">
           <Image src={Home} alt="Home_Icon" />
           <p className="text-black opacity-60 text-[16px]">Главная</p>
@@ -54,22 +54,23 @@ const Index = () => {
           </p>
         ))}
       </div>
-      <div className="flex-wrap md:flex justify-between mb-[80px]">
-        <div className="Swiper_Slider">
-          <div className="relative w-[713px]">
+      <div className="flex flex-wrap md:flex-nowrap justify-between mb-[80px]">
+        <div className="Swiper_Slider w-full md:w-auto">
+          <div className="relative w-full md:w-[713px]">
             <Swiper
               spaceBetween={10}
               slidesPerView={1}
               navigation
               pagination={{ clickable: true }}
+              loop
               className="w-full rounded-lg bg-white overflow-hidden"
               modules={[Navigation, Pagination]}
             >
               {products.map((item, index) => (
                 <SwiperSlide key={index} className="flex justify-center items-center">
-                  <div className="w-[713px] h-[441px] relative flex justify-center py-10">
+                  <div className="w-full md:w-[713px] h-[441px] relative flex justify-center py-10">
                     <Image
-                      src={item.image_url[1]}
+                      src={item.image_url[0]}
                       alt={`Product image ${index + 1}`}
                       width={513}
                       height={341}
@@ -79,6 +80,7 @@ const Index = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
+            
             <div className="flex gap-2 mt-4 overflow-x-auto">
               {products.map((item, index) => (
                 <div
@@ -86,7 +88,7 @@ const Index = () => {
                   className="flex-shrink-0 w-[136px] h-[90px] bg-white border-2 border-yellow-500 rounded-lg overflow-hidden"
                 >
                   <Image
-                    src={item.image_url[1]}
+                    src={item.image_url[0]}
                     width={136}
                     height={90}
                     alt={`Thumbnail image ${index + 1}`}
@@ -98,22 +100,22 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="Product_Title bg-white px-12  rounded-lg">
+        <div className="Product_Title bg-white p-4 md:px-12 rounded-lg mt-4 md:mt-0">
           {products.map((item, index) => (
             <div key={index}>
-              <p className="text-[32px] pt-[20px] mb-[16px] font-semibold w-[320px]">
+              <p className="text-[24px] md:text-[32px] pt-[20px] font-semibold w-full md:w-[320px] h-[100px]">
                 {item.product_name}
               </p>
-              <p className="text-[16px] mb-[20px] w-[371px]">{item.description}</p>
-              <p className="text-[16px] mb-[20px]">
+              <p className="text-[14px] md:text-[16px] pt-[20px] w-full md:w-[371px]">{item.description}</p>
+              <p className="text-[14px] md:text-[16px] mb-[20px]">
                 В комлекте: <span className="font-semibold">{item.count} шт.</span>
               </p>
-              <p className="text-[16px] mb-[70px]">
+              <p className="text-[14px] md:text-[16px] mb-[70px]">
                 Страна производства: <span className="font-semibold">{item.made_in}</span>
               </p>
-              <p className="text-[24px] mb-[80px] font-bold">
+              <p className="text-[18px] md:text-[24px] mb-[80px] font-bold">
                 <span className="font-medium">Цена:</span> {item.cost}{" "}
-                <span className="text-[20px] font-normal bg-opacity-80">uzs</span>
+                <span className="text-[16px] md:text-[20px] font-normal bg-opacity-80">uzs</span>
               </p>
               <div className="flex gap-5 mb-[60px]">
                 <button className="w-[145px] bg-[#FBD029] hover:bg-[#bfa84d] font-medium p-4 rounded-md">
@@ -126,42 +128,42 @@ const Index = () => {
 
               <div className="flex items-center gap-2">
                 <Image src={Share} alt="Share_Icon" width={24} height={24} />
-                <p className="text-[16px]">Поделиться</p>
+                <p className="text-[14px] md:text-[16px]">Поделиться</p>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="flex-wrap md:flex justify-between mb-[81px]">
-        <div>
-          <p className="text-[32px] font-medium mb-[31px]">Описание</p>
-          <div className="bg-white py-[40px] pr-[140px] pl-[50px] rounded-lg">
-            <p className="text-[24px] font-medium mb-[28px]">
+      <div className="flex flex-wrap md:flex-nowrap justify-between mb-[81px]">
+        <div className="w-full md:w-auto mb-4 md:mb-0">
+          <p className="text-[24px] md:text-[32px] font-medium mb-[31px]">Описание</p>
+          <div className="bg-white py-[20px] md:py-[40px] pr-[20px] md:pr-[140px] pl-[20px] md:pl-[50px] rounded-lg">
+            <p className="text-[20px] md:text-[24px] font-medium mb-[28px]">
               Гантель виниловая, 2 х 3 кг
             </p>
-            <p className="w-[371px] mb-[53px]">
+            <p className="text-[14px] md:text-[16px] w-full md:w-[371px] mb-[53px]">
               В составе томатов в большом количестве содержатся сахара,
               клетчатка, пектины, бета-каротин, витамины.
             </p>
-            <div className="flex gap-14">
+            <div className="flex flex-wrap gap-14">
               <div>
                 <div className="mb-[30px]">
-                  <p className="text-[20px] font-semibold">Вес гантела:</p>
+                  <p className="text-[18px] md:text-[20px] font-semibold">Вес гантела:</p>
                   <p>5кг</p>
                 </div>
                 <div>
-                  <p className="text-[20px] font-semibold">Вес гантела:</p>
+                  <p className="text-[18px] md:text-[20px] font-semibold">Вес гантела:</p>
                   <p>5кг</p>
                 </div>
               </div>
               <div>
                 <div className="mb-[30px]">
-                  <p className="text-[20px] font-semibold">Цвета:</p>
+                  <p className="text-[18px] md:text-[20px] font-semibold">Цвета:</p>
                   <p>Синий, Красный</p>
                 </div>
                 <div>
-                  <p className="text-[20px] font-semibold">Цвета:</p>
+                  <p className="text-[18px] md:text-[20px] font-semibold">Цвета:</p>
                   <p>Синий, Красный</p>
                 </div>
               </div>
@@ -169,34 +171,34 @@ const Index = () => {
           </div>
         </div>
 
-        <div>
-          <p className="text-[32px] font-medium mb-[31px]">Отзыви</p>
-          <div className="bg-white py-[40px] pr-[140px] pl-[50px] rounded-lg">
-            <p className="text-[24px] font-medium mb-[28px]">
+        <div className="w-full md:w-auto">
+          <p className="text-[24px] md:text-[32px] font-medium mb-[31px]">Отзыви</p>
+          <div className="bg-white py-[20px] md:py-[40px] pr-[20px] md:pr-[140px] pl-[20px] md:pl-[50px] rounded-lg">
+            <p className="text-[20px] md:text-[24px] font-medium mb-[28px]">
               Гантель виниловая, 2 х 3 кг
             </p>
-            <p className="w-[371px] mb-[53px]">
+            <p className="text-[14px] md:text-[16px] w-full md:w-[371px] mb-[53px]">
               В составе томатов в большом количестве содержатся сахара,
               клетчатка, пектины, бета-каротин, витамины.
             </p>
-            <div className="flex gap-14">
+            <div className="flex flex-wrap gap-14">
               <div>
                 <div className="mb-[30px]">
-                  <p className="text-[20px] font-semibold">Вес гантела:</p>
+                  <p className="text-[18px] md:text-[20px] font-semibold">Вес гантела:</p>
                   <p>5кг</p>
                 </div>
                 <div>
-                  <p className="text-[20px] font-semibold">Вес гантела:</p>
+                  <p className="text-[18px] md:text-[20px] font-semibold">Вес гантела:</p>
                   <p>5кг</p>
                 </div>
               </div>
               <div>
                 <div className="mb-[30px]">
-                  <p className="text-[20px] font-semibold">Цвета:</p>
+                  <p className="text-[18px] md:text-[20px] font-semibold">Цвета:</p>
                   <p>Синий, Красный</p>
                 </div>
                 <div>
-                  <p className="text-[20px] font-semibold">Цвета:</p>
+                  <p className="text-[18px] md:text-[20px] font-semibold">Цвета:</p>
                   <p>Синий, Красный</p>
                 </div>
               </div>
@@ -206,17 +208,11 @@ const Index = () => {
       </div>
 
       <div>
-        <p className="text-[32px] font-medium mb-10">Рекомендованные продукты</p>
-        <div className="flex-wrap md:flex justify-between gap-5">
-          {comments.length === 0 ? (
-            <div className="bg-white px-12 py-10 rounded-lg">
-              <p className="text-[24px] font-medium">Комментарий yo'q</p>
-            </div>
-          ) : (
-            comments.slice(0,1).map((comment, index) => (
-              <CardComment key={index} {...comment} />
-            ))
-          )}
+        <p className="text-[24px] md:text-[32px] font-medium mb-10">Рекомендованные продукты</p>
+        <div className="flex flex-wrap md:flex-nowrap justify-between gap-5">
+          {commentsProduct.slice(0).map((item, index) => (
+            <CardComment key={index} {...item} />
+          ))}
         </div>
       </div>
     </div>

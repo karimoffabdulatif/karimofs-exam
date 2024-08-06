@@ -6,7 +6,6 @@ export default function Home() {
       <main>
         <Banner />
         <Calatog/> 
-        
         <Products />
         <Usefull/>
         <Advantages/>

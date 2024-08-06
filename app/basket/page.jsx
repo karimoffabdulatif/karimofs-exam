@@ -1,241 +1,284 @@
 "use client";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import Home from "../../public/Icon_Home.svg";
-import Next from "../../public/Next_Page_Icon.svg";
-import Gan from "../../public/Tosh.svg";
-import Delete from "../../public/Delete_Icon.svg";
-import Bag from "../../public/Bag.svg";
-import Clothes from "../../public/Forma.svg";
-import Jump from "../../public/Jumping.svg";
-import Location from "../../public/Yellow-Location.svg";
-import Click from "../../public/Click_Logo.svg";
-import Payme from "../../public/Payme_Logo.svg";
-import For_Card from "../../public/For_Card.svg";
-import Wallet from "../../public/Wallet.svg";
-import Card_Modal from '../../components/modal/bank-card';
-import Location_Modal from '../../components/modal/location/index'
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import click from "../../public/Click_Logo.svg";
+import payme from "../../public/Payme_Logo.svg";
+import basket from '../../sevice/basket.prosuct'
+import { HiOutlineLocationMarker } from "react-icons/hi";
 
-const Index = () => {
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      name: "Гантель виниловая ",
-      price: 300000,
-      initialCount: 1,
-      image: Gan,
-    },
-    {
-      id: 2,
-      name: "Сумка спортивная",
-      price: 220000,
-      initialCount: 1,
-      image: Bag,
-    },
-    {
-      id: 3,
-      name: "Форма спортивная",
-      price: 1500000,
-      initialCount: 1,
-      image: Clothes,
-    },
-    {
-      id: 4,
-      name: "Скакалка",
-      price: 30000,
-      initialCount: 1,
-      image: Jump,
-    },
-  ]);
+const ProductCard = () => {
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isLocationModalOpen, setIsLocationModalOpen] = useState(false);
+  const getData = async () => {
+    try {
+      const response = await basket.get();
+      const initializedProducts = response.data.map((product) => ({
+        ...product,
+        count: product.count || 0,
+      }));
+      setProducts(initializedProducts);
+      setIsLoading(false);
+    } catch (error) {
+      console.log("Error fetching data:", error);
+      setIsLoading(false);
+    }
+  };
 
-  const updateProductCount = (id, newCount) => {
-    setProducts(
-      products.map((product) =>
-        product.id === id ? { ...product, count: newCount } : product
+  const deleteCard = async (id) => {
+    const updatedProducts = products.filter(
+      (product) => product.product_id !== id
+    );
+    setProducts(updatedProducts);
+    try {
+      await basket.delete(id);
+      console.log("Product deleted successfully");
+    } catch (error) {
+      console.error("Error deleting product:", error);
+    }
+  };
+
+  const decrementCount = (id) => {
+    setProducts((prevProducts) =>
+      prevProducts.map((product) =>
+        product.product_id === id
+          ? { ...product, count: Math.max(product.count - 1, 0) }
+          : product
       )
     );
   };
 
-  const getTotalCount = () => {
-    return products.reduce((total, product) => total + (product.count || 0), 0);
-  };
-
-  const getTotalPrice = () => {
-    return products.reduce(
-      (total, product) => total + (product.count || 0) * product.price,
-      0
+  const incrementCount = (id) => {
+    setProducts((prevProducts) =>
+      prevProducts.map((product) =>
+        product.product_id === id
+          ? { ...product, count: product.count + 1 }
+          : product
+      )
     );
   };
 
-  return (
-    <div className="container mx-auto px-4 md:px-10">
-      <div className="flex gap-2 pt-[20px] pb-[20px]">
-        <Link href="/" className="flex gap-2">
-          <Image src={Home} alt="Home_Icon" />
-          <p className="text-black opacity-60 text-[16px]">Главная</p>
-        </Link>
-        <Image src={Next} alt="Next_Page_Icon" />
-        <p className="text-black text-[16px] font-medium">Корзина</p>
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const totalSum = products.reduce(
+    (total, product) => total + product.count * product.cost,
+    0
+  );
+
+  const totalQuantity = products.reduce(
+    (total, product) => total + product.count,
+    0
+  );
+
+  const totalPrice = totalSum;
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <p className="text-[30px] font-medium">Загрузка...</p>
       </div>
+    );
+  }
 
-      <div className="flex flex-col md:flex-row gap-[24px]">
-        <div className="w-full md:w-[700px] lg:p-[20px] bg-white rounded-lg mb-[60px]">
-          <div className="pt-[20]  lg:flex lg:pt-[20px] p-7">
-            <p className="text-[24px] font-semibold">Ваша корзина</p>
-            <p className="text-[12px] text-[#FF1313] font-medium pt-[8px] ml-auto pr-3">
-              Очистить все
-            </p>
-          </div>
-
-       <div className="">
-       {products.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              onCountChange={(newCount) =>
-                updateProductCount(product.id, newCount)
-              }
-            />
-          ))}
-       </div>
-
-          <div className="pt-[63px] pl-[32px]">
-            <p className="text-[20px] font-medium text-[#06F] underline">
-              Все информация о доставке
-            </p>
-            <p className="text-[20px] w-full md:w-[385px] pb-[60px]">
-              Если у вас имеются вопросы позаоните по номеру:{" "}
-              <span className="text-[#06F] fort-medium">+998940017653</span>
-            </p>
-          </div>
-        </div>
-
-        <div className=" mb-8 lg:w-full md:w-[504px] bg-white rounded-lg p-6 self-start">
-          <p className="text-[20px] font-semibold">Итого</p>
-          <div className="flex justify-between gap-4 md:gap-[150px]">
-            <div>
-              <p className="text-[20px] font-medium">Кол-во товаров:</p>
-              <p className="text-[20px] font-medium">{getTotalCount()}</p>
+  return (
+    <div className="bg-custom-gray bg-[#F2F2F2] p-[20px]">
+      <div className="container mx-auto">
+        <div className="flex flex-col gap-[40px] lg:flex-row">
+          <div className="w-full max-w-[713px] h-auto rounded-lg bg-white p-4">
+            <div className="flex justify-between items-center pt-[20px] pb-[15px]">
+              <h1 className="text-[24px] font-medium text-[#000]">
+                Ваша корзина
+              </h1>
+              <button
+                onClick={() => setProducts([])}
+                className="text-red-500"
+              >
+                Очистить все
+              </button>
             </div>
-            <div>
-              <p className="text-[20px] font-medium">Сумма:</p>
-              <p className="text-[22px] font-bold">
-                {getTotalPrice().toLocaleString()}
+            <div className="grid grid-cols-1 gap-4">
+              {products.map((product) => (
+                <div
+                  key={product.product_id}
+                  className="font-Fira-sans max-w-[655px] flex flex-col sm:flex-row border rounded-lg overflow-hidden p-4 bg-custom-gray relative mb-4"
+                >
+                  <button
+                    onClick={() => deleteCard(product.product_id)}
+                    className="absolute flex justify-center text-red-500 items-center top-2 right-2 w-[32px] h-[32px] rounded-[50%] bg-white"
+                  >
+                    <DeleteOutlineOutlinedIcon />
+                  </button>
+                  <div className="flex flex-col sm:flex-col lg:flex-row">
+                    <div className="w-full sm:w-[145px] sm:h-[120px] flex-shrink-0 mr-4">
+                      <Image
+                        src={product.image_url[0]}
+                        alt={product.product_name}
+                        width={145}
+                        height={120}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
+                    <div className="flex-1 flex flex-col justify-between mt-4 sm:mt-0">
+                      <div className="font-bold text-xl mb-2">
+                        <h1 className="w-full text-xl text-[#1F1D14] font-normal leading-normal">
+                          {product.product_name}
+                        </h1>
+                      </div>
+                      <div className="flex items-center gap-[6px]">
+                        <button
+                          onClick={() => decrementCount(product.product_id)}
+                          className="flex text-[#000] justify-center bg-white items-center border w-[32px] h-[32px] font-bold rounded-[50%]"
+                        >
+                          -
+                        </button>
+                        <span className="text-[16px] text-[#000]">
+                          {product.count}
+                        </span>
+                        <button
+                          onClick={() => incrementCount(product.product_id)}
+                          className="flex justify-center text-[#000] bg-white items-center border w-[32px] h-[32px] font-bold rounded-[50%]"
+                        >
+                          +
+                        </button>
+                        <span className="pl-[20px] text-[16px] font-normal text-[#000]">
+                          {(product.count * product.cost).toLocaleString()} uzs
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <h3 className="cursor-pointer border-bottom pt-[15px] pb-[15px] text-blue-600">
+              Все информация о доставке
+            </h3>
+            <div className="mb-[40px]">
+              <p className="max-w-[384px] text-[#000] text-[16px]">
+                Если у вас имеется вопросы позвоните по номеру:{" "}
+                <span className="text-blue-600 cursor-pointer">
+                  +998 (99) 995 55 65
+                </span>
               </p>
             </div>
           </div>
-
-          <div className="pt-[24px]">
-            <p className="text-[20px] font-semibold">Ваши данные</p>
-            <p className="text-[16px] pt-[24px] mb-[8px]">Имя /Фамиля</p>
-            <input
-              placeholder="Имя /Фамиля"
-              className="w-full md:w-[414px] p-[16px] rounded-[5px] bg-[#F2F2F2]"
-            />
-            <div>
-              <p className="text-[16px] pt-[24px] mb-[8px]">Ваш номер</p>
-              <input
-                type="tel"
-                placeholder="+998__- __ - __ - __"
-                className="w-full md:w-[414px] p-[16px] rounded-[5px] bg-[#F2F2F2]"
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                required
-              />
-            </div>
-            <div className="mb-10">
-              <p className="text-[16px] pt-[24px] mb-[8px]">Адрес доставки</p>
-              <div className="flex">
-                <input
-                  placeholder="Область/город/улица/дом"
-                  className="w-full md:w-[350px] p-[16px] rounded-[5px]  bg-[#F2F2F2]"
-                />
-                <button className="Location btn ml-2" onClick={() => setIsLocationModalOpen(true)}>
-                  <Image src={Location} alt="Yellow_Location" />
-                </button>
+          <div className="w-full max-w-[504px] h-auto mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+            <div className="p-6">
+              <div className="text-xl text-[#000] font-medium mb-2">
+                Итого
               </div>
-            </div>
-
-            <div className="mb-[59px]">
-              <p className="text-[20px]  font-semibold mb-[24px]">Тип оплаты</p>
-              <div className=" grid grid-cols-3 gap-4 w-full">
-                <Image src={Click} alt="Click_Logo" />
-                <Image src={Payme} alt="Payme_Logo" />
+              <div className="flex items-center gap-4 mb-2">
+                <span className="text-xl text-[#000]">Кол-во товаров:</span>
+                <span className="text-xl text-[#000] text-medium">
+                  {totalQuantity}
+                </span>
+              </div>
+              <div className="flex items-center gap-4 mb-6">
+                <span className="text-xl text-[#000]">Сумма:</span>
+                <span className="text-xl text-[#000] text-medium">
+                  {totalPrice.toLocaleString()} UZS
+                </span>
+              </div>
+              <div className="text-xl font-medium text-[#000] mb-4">
+                Ваши данные
+              </div>
+              <form>
+                <div className="mb-4">
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="name"
+                  >
+                    Имя / Фамилия
+                  </label>
+                  <input
+                    id="name"
+                    type="text"
+                    placeholder="Имя / Фамилия"
+                    className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="phone"
+                  >
+                    Ваш номер
+                  </label>
+                  <input
+                    id="phone"
+                    type="text"
+                    placeholder="+998 _ _ _ _ _ _ _"
+                    className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+                  />
+                </div>
+                <div className="mb-4">
+                  <label
+                    className="block text-gray-700 text-sm font-bold mb-2"
+                    htmlFor="address"
+                  >
+                    Адрес доставки
+                  </label>
+                  <div className="relative">
+                    <input
+                      id="address"
+                      type="text"
+                      placeholder="Область/город/улица/дом"
+                      className="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none"
+                    />
+                    <button
+                      type="button"
+                      className="absolute right-0 top-0 p-[11px] rounded-[5px] bg-yellow-500"
+                    >
+                      <HiOutlineLocationMarker className="w-5 h-5" />
+                    </button>
+                  </div>
+                </div>
+                <div className="text-lg font-semibold mb-2">Тип оплаты</div>
+                <div className="grid grid-cols-2 gap-2 mb-4">
+                  <button
+                    type="button"
+                    className="flex justify-center items-center px-[25px] py-[17px] text-sm font-semibold text-gray-700 border rounded-lg focus:outline-none"
+                  >
+                    <Image src={click} alt="click" />
+                  </button>
+                  <button
+                    type="button"
+                    className="flex justify-center items-center px-[25px] py-[17px] text-sm font-semibold text-gray-700 border rounded-lg focus:outline-none"
+                  >
+                    <Image
+                      src={payme}
+                      alt="payme"
+                      className="w-[80px] h-[38px]"
+                    />
+                  </button>
+                  <button
+                    type="button"
+                    className="flex justify-center items-center px-[25px] py-[17px] text-sm font-semibold text-gray-700 border rounded-lg focus:outline-none"
+                  >
+                    Через карту
+                  </button>
+                  <button
+                    type="button"
+                    className="flex justify-center items-center px-[25px] py-[17px] text-sm font-semibold text-gray-700 border rounded-lg focus:outline-none"
+                  >
+                    Банковский счёт
+                  </button>
+                </div>
                 <button
-                  onClick={() => setIsModalOpen(true)}
-                  className="Card"
+                  type="submit"
+                  className="w-full px-[40px] py-[20px] mt-[50px] text-white bg-yellow-500 rounded-lg font-semibold"
                 >
-                  <Image src={For_Card} alt="Card" />
+                  Купить
                 </button>
-                <Image src={Wallet} alt="Wallet" />
-              </div>
-            </div>
-
-            <div className="mb-[50px]">
-              <button className="bg-[#FBD029]  hover:bg-yellow-300 transition-all w-full md:w-[424px] p-4 rounded-md text-[24px] font-semibold">Купить</button>
+              </form>
             </div>
           </div>
         </div>
       </div>
-
-      {isModalOpen && <Card_Modal onClose={() => setIsModalOpen(false)} />}
-      {isLocationModalOpen && <Location_Modal onClose={() => setIsLocationModalOpen(false)} />}
     </div>
   );
 };
 
-const ProductCard = ({ product, onCountChange }) => {
-  const [count, setCount] = useState(product.initialCount || 1);
-  const totalPrice = count * product.price;
-
-  const handleCountChange = (newCount) => {
-    setCount(newCount);
-    onCountChange(newCount);
-  };
-
-  return (
-    <div className="w-full md:w-[655px] ml-0  lg:pr-[20px]  bg-[#F2F2F2] flex flex-col md:flex-row gap-[20px] md:gap-[60px] mb-[20px] rounded-lg shadow-md p-4 md:p-0">
-      <div className="pt-[10px] p-3 flex-shrink-0">
-        <Image src={product.image} alt={product.name} className="w-[160px] h-[160px] object-cover rounded-md mx-auto md:mx-0" />
-      </div>
-      <div className="pt-[19px] flex-1">
-        <p className="flex justify-center lg:w-full lg:flex lg:justify-start md:w-[292px] text-[20px] mb-[20px] md:mb-[70px] font-semibold">{product.name}</p>
-        <div className="flex flex-col md:flex-row gap-4 md:gap-[40px] items-center">
-          <div className="flex items-center gap-3 ">
-            <button
-              onClick={() => handleCountChange(count > 1 ? count - 1 : count)}
-              className="w-[40px] h-[40px] bg-white border border-gray-300 rounded-full flex items-center justify-center text-[24px] text-gray-700 hover:bg-gray-100 transition-all"
-            >
-              -
-            </button>
-            <p className="text-[18px] mt-1">{count}</p>
-            <button
-              onClick={() => handleCountChange(count + 1)}
-              className="w-[40px] h-[40px] bg-white border border-gray-300 rounded-full flex items-center justify-center text-[24px] text-gray-700 hover:bg-gray-100 transition-all"
-            >
-              +
-            </button>
-          </div>
-
-          <div className="flex gap-1 items-center">
-            <p className="text-[22px] font-bold">
-              {totalPrice.toLocaleString()}
-            </p>
-            <p className="text-[16px] mt-[5px] font-normal">UZS</p>
-          </div>
-        </div>
-      </div>
-
-<div className="flex justify-center lg:pt-4">
-<div className=" flex justify-center lg: bg-white w-10 h-10 rounded-full lg:flex items-center lg:justify-center mt-4 md:mt-0 md:ml-auto hover:bg-gray-100 transition-all">
-        <Image src={Delete} alt="Delete-Icon" className="w-6 h-6" />
-      </div>
-</div>
-    </div>
-  );
-};
-
-export default Index;
+export default ProductCard;
