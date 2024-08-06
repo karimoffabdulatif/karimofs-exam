@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import Banner1 from "../../../public/Banner1.jpg";
-import Banner2 from "../../../public/Banner_2.jpg";
-import Banner3 from "../../../public/Banner3.jpg";
+import Banner1 from "@/public/Banner1.jpg";
+import Banner2 from "@/public/Banner_2.jpg";
+import Banner3 from "@/public/Banner3.jpg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 

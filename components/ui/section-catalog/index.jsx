@@ -22,7 +22,7 @@ export default function Index() {
     <div className="bg-white pb-16">
       <div className="container mx-auto px-4 sm:px-10">
         <div className="pt-7 pb-7">
-          <p className="text-[24px] lg:text-[36px] font-medium">Катаолог</p>
+          <p className="flex justify-center lg:justify-start text-[24px] lg:text-[36px] font-medium">Катаолог</p>
         </div>
 
         <Swiper
@@ -56,20 +56,20 @@ export default function Index() {
         >
           <SwiperSlide>
             <div className="bg-[#D3E5F2] rounded-lg px-4 sm:px-9">
-              <p className="text-[16px] sm:text-[18px] font-medium flex mr-auto mt-3 -ml-4 sm:-ml-7">
+              <p className="text-[16px] pl-4 sm:text-[18px] font-medium flex mr-auto mt-3 -ml-4 sm:-ml-7">
                 Тренажеры
               </p>
               <Image
                 src={Treyn}
                 alt="Тренажеры"
-                className="mt-10 mb-7"
+                className="mt-10 mb-8"
               />
             </div>
           </SwiperSlide>
 
           <SwiperSlide>
             <div className="bg-[#E2C6BE] bg-opacity-40 rounded-lg px-4 sm:px-9">
-              <p className="text-[16px] sm:text-[18px] font-medium flex mr-auto mt-3 -ml-4 sm:-ml-7">
+              <p className="text-[16px] pl-4 sm:text-[18px] font-medium flex mr-auto mt-3 -ml-4 sm:-ml-7">
                 Мячи
               </p>
               <Image
@@ -108,26 +108,26 @@ export default function Index() {
 
           <SwiperSlide>
             <div className="bg-[#E2C6BE] bg-opacity-40 rounded-lg px-4 sm:px-9">
-              <p className="text-[16px] sm:text-[18px] font-medium flex mr-auto mt-3 -ml-4 sm:-ml-7">
+              <p className="text-[16px] pl-4 sm:text-[18px] font-medium flex mr-auto mt-3 -ml-4 sm:-ml-7">
                 Мячи
               </p>
               <Image
                 src={Bals}
                 alt="Тренажеры"
-                className="mt-10 mb-8"
+                className="mt-10 mb-7"
               />
             </div>
           </SwiperSlide>
 
           <SwiperSlide>
             <div className="bg-[#D3E5F2] rounded-lg px-4 sm:px-9">
-              <p className="text-[16px] sm:text-[18px] font-medium flex mr-auto mt-3 -ml-4 sm:-ml-7">
+              <p className="text-[16px] pl-4 sm:text-[18px] font-medium flex mr-auto mt-3 -ml-4 sm:-ml-7">
                 Тренажеры
               </p>
               <Image
                 src={Treyn}
                 alt="Тренажеры"
-                className="mt-10 mb-7"
+                className="mt-10 mb-6"
               />
             </div>
           </SwiperSlide>
@@ -140,7 +140,7 @@ export default function Index() {
               <Image
                 src={Clothes_Swimming}
                 alt="Тренажеры"
-                className="mt-10"
+                className="mt-7"
               />
             </div>
           </SwiperSlide>
@@ -153,7 +153,7 @@ export default function Index() {
               <Image
                 src={Clothes_Snow}
                 alt="Тренажеры"
-                className="mt-10"
+                className="mt-7"
               />
             </div>
           </SwiperSlide>

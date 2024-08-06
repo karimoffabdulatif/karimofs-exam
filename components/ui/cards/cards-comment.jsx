@@ -1,9 +1,9 @@
 import Image from "next/image";
 import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import Jump from "../../../public/Jumping.svg";
-import Gan from "../../../public/Tosh.svg";
-import Sht from "../../../public/Shtanga.svg";
-import Case from "../../../public/Shopping_Icon.svg";
+import Jump from "@/public/Jumping.svg";
+import Gan from "@/public/Tosh.svg";
+import Sht from "@/public/Shtanga.svg";
+import Case from "@/public/Shopping_Icon.svg";
 import { useState } from "react";
 
 

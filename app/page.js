@@ -1,4 +1,4 @@
-import { Calatog, Action, Banner, Usefull, Advantages, Abaut, Companies } from "@/components/ui";
+import { Calatog, Products, Banner, Usefull, Advantages, Abaut, Companies } from "@/components/ui";
 
 export default function Home() {
   return (
@@ -6,7 +6,8 @@ export default function Home() {
       <main>
         <Banner />
         <Calatog/> 
-        <Action />
+        
+        <Products />
         <Usefull/>
         <Advantages/>
         <Abaut/>

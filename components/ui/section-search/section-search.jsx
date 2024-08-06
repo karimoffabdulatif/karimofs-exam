@@ -3,7 +3,6 @@ import { useState } from "react";
 import Image from "next/image";
 import Category_Icon from "../../../public/Search_Section_Icon.svg";
 import Search_Icon from "../../../public/Icon_Search.svg";
-import User_Icon from "../../../public/User_Icon.svg";
 import Like_Icon from "../../../public/Like_icon.svg";
 import Shop_Icon from "../../../public/Shopping_Icon.svg";
 import Login_Modal from '../../modal/login/index';
@@ -41,12 +40,7 @@ const Index = () => {
 
           <div className="flex items-center gap-4 sm:gap-6 mt-4 sm:mt-0">
             <div className="flex gap-2 sm:gap-4">
-              <button
-                onClick={handleUserButtonClick}
-                className="User_Button bg-[#F2F2F2] w-10 h-10 sm:w-11 sm:h-11 rounded-[3px] flex items-center justify-center hover:bg-yellow-300 transition-all"
-              >
-                <Image src={User_Icon} alt="User_Icon" />
-              </button>
+              <Login_Modal/>
               <button className="bg-[#F2F2F2] w-10 h-10 sm:w-11 sm:h-11 rounded-[3px] flex items-center justify-center hover:bg-yellow-300 transition-all">
                 <Image src={Like_Icon} alt="Like_Icon" />
               </button>

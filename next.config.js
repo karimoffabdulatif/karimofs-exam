@@ -1,9 +1,6 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-    images: {
-      domains: ['swiperjs.com'],
-    },
-  };
-  
-  module.exports = nextConfig;
-  
+// next.config.js
+module.exports = {
+  images: {
+    domains: ['swiperjs.com', 'media.go-clothes.uz'],
+  },
+};

@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import Home from "../../public/Icon_Home.svg";
+import Home from "/public/Icon_Home.svg";
 import Next from "../../public/Next_Page_Icon.svg";
 import Cadr from "../../public/Cadr_Icon.svg";
 import Lists from "../../public/Lists_Icon.svg";
@@ -17,17 +17,9 @@ const Index = () => {
   const [isLiked, setIsLiked] = useState(false);
   const [shownProducts, setShownProducts] = useState(6);
   const [value, setValue] = useState([20, 37]);
-  const [products, setProducts] = useState([
-    { id: 1, name: "Product 1", price: 100 },
-    { id: 2, name: "Product 2", price: 200 },
-    { id: 3, name: "Product 3", price: 300 },
-    { id: 4, name: "Product 4", price: 400 },
-    { id: 5, name: "Product 5", price: 500 },
-    { id: 6, name: "Product 6", price: 600 },
-    { id: 7, name: "Product 7", price: 700 },
-    { id: 8, name: "Product 8", price: 800 },
-    { id: 9, name: "Product 9", price: 900 },
-  ]);
+  const [products, setProducts] = useState([]);
+
+  
 
   const [comments, setComments] = useState([
     { id: 1, text: "Great product!", author: "Alice" },
@@ -132,6 +124,11 @@ const Index = () => {
               </select>
             </div>
           </div>
+
+
+
+
+
           <div className="mt-4">
             <button className="w-full mb-[30px]  md:w-full p-4 bg-[#E4E4E4] rounded-bl-lg rounded-br-lg text-[15px] font-medium">
               Показать результат
@@ -141,7 +138,9 @@ const Index = () => {
 
         <div className="w-full">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex gap-2 items-center">
+
+
+            <div className="flex pl-6 gap-2 items-center">
               <select className="w-full md:w-[147px] bg-white px-3 py-2 rounded-md">
                 <option value="all" className="font-semibold">
                   Сортировать
@@ -156,6 +155,9 @@ const Index = () => {
               </select>
             </div>
 
+
+            
+
             <div className="flex gap-2 items-center">
               <div className="bg-white flex w-full md:w-[93px] rounded-lg px-3 py-2 items-center">
                 <p className="text-[16px] pl-2">Кард</p>
@@ -169,10 +171,14 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="flex justify-center md:flex flex-wrap md:justify-between mt-5 mb-4">
-            {products.slice(0, shownProducts).map((product) => (
-              <Cards key={product.id} {...product} />
-            ))}
+
+
+
+
+          <div className="pl-6  lg:grid mb-[50px]  md:flex flex-wrap md:justify-between mt-5 lg:mb-4">
+
+              <Cards/>
+
           </div>
           {shownProducts < products.length && (
             <div className="mb-[70px] md:hidden">
@@ -187,7 +193,8 @@ const Index = () => {
         </div>
       </div>
 
-      <p className="flex justify-center text-[25px] md:text-[32px] font-medium mb-14">Реконмендуемые продукты</p>
+
+      <p className="flex justify-center text-[22px] lg:flex lg:justify-start lg:text-[25px] md:text-[32px] font-medium mb-14">Реконмендуемые продукты</p>
       <div className="flex justify-center md:flex flex-wrap gap-5">
         {comments.slice(4).map((comment) => (
           <CardsComment key={comment.id} {...comment} />

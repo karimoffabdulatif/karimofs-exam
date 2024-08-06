@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Data from "../../../public/Data_Icon.svg";
-import Eye from "../../../public/Eye_Icon.svg";
+import Data from "@/public/Data_Icon.svg";
+import Eye from "@/public/Eye_Icon.svg";
 
 const Index = () => {
   const currentDate = new Date().toLocaleDateString('ru-RU', {

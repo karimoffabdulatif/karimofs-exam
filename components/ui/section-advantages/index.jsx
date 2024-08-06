@@ -1,13 +1,13 @@
 import Image from "next/image";
-import Truc from "../../../public/Truck_Icons.svg";
-import Check from '../../../public/Check_Icon.svg'
-import Persond from '../../../public/Porsend_Icon.svg'
-import Doc from '../../../public/Doc_Icon.svg'
+import Truc from "@/public/Truck_Icons.svg";
+import Check from '@/public/Check_Icon.svg'
+import Persond from '@/public/Porsend_Icon.svg'
+import Doc from '@/public/Doc_Icon.svg'
 
 const Index = () => {
   return (
     <section className="container mx-auto px-4 sm:px-6 lg:px-8 pb-[80px]">
-      <p className="text-[24px] sm:text-[32px] font-medium pt-[86px] mb-6">Примущества</p>
+      <p className="flex justify-center lg:justify-start text-[24px] sm:text-[32px] font-medium pt-[86px] mb-6">Примущества</p>
 
       <div className="flex flex-wrap gap-6 justify-center sm:justify-between mb-[100px]">
         <div className="bg-white w-full sm:w-[45%] md:w-[30%] lg:w-[22%] rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
