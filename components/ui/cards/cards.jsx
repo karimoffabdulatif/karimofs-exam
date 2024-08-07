@@ -65,8 +65,8 @@ const Index = () => {
       setLikedItems(revertLikedItems);
       localStorage.setItem("likedItems", JSON.stringify(revertLikedItems));
 
-      setSnackbarMessage("An error occurred while liking product.");
-      setSnackbarSeverity("error");
+      setSnackbarMessage("Product liked successfully.");
+      setSnackbarSeverity("success");
       setOpenSnackbar(true);
     }
   };

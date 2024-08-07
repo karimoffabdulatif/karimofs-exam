@@ -172,24 +172,28 @@ const Index = () => {
         </div>
 
         <div className="w-full md:w-auto">
-          <p className="text-[24px] md:text-[32px] font-medium mb-[31px]">Отзыви</p>
-          <div className="bg-white py-[20px] md:py-[40px] pr-[20px] md:pr-[140px] pl-[20px] md:pl-[50px] rounded-lg">
-            <p className="text-[20px] md:text-[24px] font-medium mb-[28px]">
-            Напишите своё мнение, это нам очень важно!
-            </p>
-            <div>
-            <textarea placeholder="Поделитесь с нами вашими мыслями" className="border mb-[10px] p-1 pl-4  border-black rounded-md border-spacing-1 w-[400px]"></textarea>
-            <button className="w-[100px] h-[30px] rounded-md mb-[20px] bg-[#FBD029] hover:bg-[#bba447]">Отправить</button>
-            </div>
-            <div >
-              <div className="w-[400px] h-[100px]  border border-1 border-black">
-               
-               
-              </div>
-              
-            </div>
-          </div>
-        </div>
+  <p className="text-[24px] md:text-[32px] font-medium mb-[31px]">Отзыви</p>
+  <div className="bg-white py-[20px] md:py-[40px] pr-[20px] md:pr-[140px] pl-[20px] md:pl-[50px] rounded-lg">
+    <p className="text-[20px] md:text-[24px] font-medium mb-[28px]">
+      Напишите своё мнение, это нам очень важно!
+    </p>
+    <div>
+      <textarea
+        placeholder="Поделитесь с нами вашими мыслями"
+        className="border mb-[10px] p-1 pl-4 border-black rounded-md border-spacing-1 w-full md:w-[400px]"
+      ></textarea>
+      <button className="w-full md:w-[100px] h-[30px] rounded-md mb-[20px] bg-[#FBD029] hover:bg-[#bba447]">
+        Отправить
+      </button>
+    </div>
+    <div>
+      <div className="w-full md:w-[400px] h-[100px] border border-1 border-black"></div>
+    </div>
+  </div>
+</div>
+
+
+
       </div>
 
       <div>
