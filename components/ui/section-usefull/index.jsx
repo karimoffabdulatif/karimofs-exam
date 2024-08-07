@@ -14,7 +14,7 @@ const Index = () => {
     <section className="container">
       <p className="flex justify-center text-[24px] font-semibold md:text-[32px] lg:flex lg:justify-start lg:font-medium pt-[86px] mb-6">Полезное</p>
       <div className=" flex gap-[24px] justify-between my-6 max-lg:grid max-lg:grid-cols-1 max-lg:justify-items-center ">
-        <div className="max-w-[608px] w-full bg-white rounded-lg p-9">
+        <div className="max-w-[608px] shadow-xl w-full bg-white rounded-lg p-9">
           <h3 className="text-[18px] text-center mb-[15px]  lg:text-[32px] lg:text-start lg:font-semibold ">
             Как правильно выбрать эллиптический тренажер?
           </h3>
@@ -33,10 +33,10 @@ const Index = () => {
           </div>
         </div>
         <div className="max-w-[608px] w-full">
-          <div className=" bg-white py-[18px] px-6 flex justify-center rounded-lg">
+          <div className=" shadow-xl bg-white py-[18px] px-6 flex justify-center rounded-lg">
             <Image src={Bicycle} alt="Img_Treyn" className="max-w-[508px] " />
           </div>
-          <button className=" w-full text-[16px] mt-[15px] rounded-md bg-white p-4 hover:bg-yellow-300 transition-all">
+          <button className="shadow-xl w-full text-[16px] mt-[15px] rounded-md bg-white p-4 hover:bg-yellow-300 transition-all">
             Посмотрет все
           </button>
         </div>

@@ -73,7 +73,7 @@ const Index = () => {
 
       <div className="flex flex-col md:flex-row md:gap-8">
         <div className="md:w-[300px] w-full">
-          <div className="bg-white p-4 rounded-lg">
+          <div className="bg-white shadow-xl p-4 rounded-lg">
             <p className="text-[16px] font-medium">Филтрь</p>
             <p className="text-[12px] font-normal mt-4">Цена</p>
             <div className="bg-[#F2F2F2] w-full rounded-md flex items-center justify-center mt-2">
@@ -129,8 +129,8 @@ const Index = () => {
 
 
 
-          <div className="mt-4">
-            <button className="w-full mb-[30px]  md:w-full p-4 bg-[#E4E4E4] rounded-bl-lg rounded-br-lg text-[15px] font-medium">
+          <div>
+            <button className="w-full mb-[30px]  md:w-full shadow-xl p-4 bg-[#E4E4E4] hover:bg-yellow-300 rounded-bl-lg rounded-br-lg text-[15px] font-medium">
               Показать результат
             </button>
           </div>
@@ -141,13 +141,13 @@ const Index = () => {
 
 
             <div className="flex pl-6 gap-2 items-center">
-              <select className="w-full md:w-[147px] bg-white px-3 py-2 rounded-md">
+              <select className="w-full md:w-[147px] shadow-xl bg-white px-3 py-2 rounded-md">
                 <option value="all" className="font-semibold">
                   Сортировать
                 </option>
                 <option value="option1">Option 1</option>
               </select>
-              <select className="w-full md:w-[147px] bg-white px-3 py-2 rounded-md">
+              <select className="w-full shadow-xl md:w-[147px] bg-white px-3 py-2 rounded-md">
                 <option value="all" className="font-semibold">
                   Все продукты
                 </option>
@@ -159,12 +159,12 @@ const Index = () => {
             
 
             <div className="flex gap-2 items-center">
-              <div className="bg-white flex w-full md:w-[93px] rounded-lg px-3 py-2 items-center">
+              <div className="bg-white shadow-xl flex w-full md:w-[93px] rounded-lg px-3 py-2 items-center">
                 <p className="text-[16px] pl-2">Кард</p>
                 <Image src={Cadr} alt="Cadr_Icon" className="ml-2 w-6 h-6" />
               </div>
 
-              <div className="bg-white flex w-full md:w-[93px] px-3 py-2 rounded-lg items-center">
+              <div className="bg-white shadow-xl flex w-full md:w-[93px] px-3 py-2 rounded-lg items-center">
                 <p className="text-[16px] opacity-80 pl-2">Лист</p>
                 <Image src={Lists} alt="Lists_Icon" className="opacity-80 ml-2 w-6 h-6" />
               </div>

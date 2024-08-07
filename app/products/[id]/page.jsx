@@ -85,7 +85,7 @@ const Index = () => {
               {products.map((item, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-[136px] h-[90px] bg-white border-2 border-yellow-500 rounded-lg overflow-hidden"
+                  className="flex-shrink-0 w-[136px] h-[90px] shadow-xl bg-white border-2 border-yellow-500 rounded-lg overflow-hidden"
                 >
                   <Image
                     src={item.image_url[0]}
@@ -100,7 +100,7 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="Product_Title bg-white p-4 md:px-12 rounded-lg mt-4 md:mt-0">
+        <div className="Product_Title bg-white shadow-xl p-4 md:px-12 rounded-lg mt-4 md:mt-0">
           {products.map((item, index) => (
             <div key={index}>
               <p className="text-[24px] md:text-[32px] pt-[20px] font-semibold w-full md:w-[320px] h-[100px]">
@@ -138,7 +138,7 @@ const Index = () => {
       <div className="flex flex-wrap  md:flex-nowrap gap-10 mb-[81px]">
         <div className="w-full md:w-auto mb-4 md:mb-0">
           <p className="text-[24px] md:text-[32px] font-medium mb-[31px]">Описание</p>
-          <div className="bg-white py-[20px] md:py-[40px] pr-[20px] md:pr-[140px] pl-[20px] md:pl-[50px] rounded-lg">
+          <div className="bg-white shadow-xl py-[20px] md:py-[40px] pr-[20px] md:pr-[140px] pl-[20px] md:pl-[50px] rounded-lg">
             <p className="text-[20px] md:text-[24px] font-medium mb-[28px]">
               Гантель виниловая, 2 х 3 кг
             </p>
@@ -173,7 +173,7 @@ const Index = () => {
 
         <div className="w-full md:w-auto">
   <p className="text-[24px] md:text-[32px] font-medium mb-[31px]">Отзыви</p>
-  <div className="bg-white py-[20px] md:py-[40px] pr-[20px] md:pr-[140px] pl-[20px] md:pl-[50px] rounded-lg">
+  <div className="bg-white shadow-xl py-[20px] md:py-[40px] pr-[20px] md:pr-[140px] pl-[20px] md:pl-[50px] rounded-lg">
     <p className="text-[20px] md:text-[24px] font-medium mb-[28px]">
       Напишите своё мнение, это нам очень важно!
     </p>

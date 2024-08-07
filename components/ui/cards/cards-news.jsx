@@ -11,7 +11,7 @@ const Index = () => {
 
   return (
     <div className="flex justify-center">
-      <div className="w-full max-w-[560px] lg:mb-[40px] bg-white rounded-lg mx-4 md:mx-auto">
+      <div className="w-full max-w-[560px] lg:mb-[40px] shadow-xl bg-white rounded-lg mx-4 md:mx-auto">
         <p className=" text-[18px] flex text-start ml-[18px] lg:w-full lg:pl-14 max-w-[462px]  mx-auto lg:text-[24px] md:text-[32px] font-semibold pt-[20px] md:pt-[38px]">
           Как правильно выбрать эллиптический тренажер?
         </p>

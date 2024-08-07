@@ -88,7 +88,7 @@ const Index = () => {
 
           <p className="text-[24px] md:text-[32px] font-medium mb-6">Полезные информации</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-[30px]">
+          <div className="grid  grid-cols-1 md:grid-cols-2 gap-6 pb-[30px]">
             {cardsData.slice(0, cards).map((card, index) => (
               <Cards
                 key={index}

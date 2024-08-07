@@ -50,7 +50,7 @@ const Index = () => {
 
           <div className="flex flex-col md:flex-row gap-[24px]">
             <div className="flex-shrink-0">
-              <div className="w-full md:w-[187px] bg-white rounded-lg">
+              <div className="w-full md:w-[187px] shadow-xl bg-white rounded-lg">
                 <div className="flex gap-1 pb-[15px] pt-[18px] ml-[9px]">
                   <Image src={Yellow} alt="Tik" className="w-4 h-4 md:w-auto md:h-auto" />
                   <p className="text-[16px] font-medium">О нас</p>
@@ -59,7 +59,7 @@ const Index = () => {
               </div>
             </div>
 
-            <div className="w-full md:w-[714px] bg-white rounded-lg">
+            <div className="w-full md:w-[714px] shadow-xl bg-white rounded-lg">
               <p className="text-[24px] font-semibold pt-[20px] md:pt-[40px] ml-[20px] md:ml-[50px]">
                 7 SPORT MARKET
               </p>

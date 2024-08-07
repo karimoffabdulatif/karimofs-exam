@@ -51,14 +51,14 @@ const Index = () => {
           </div>
 
           <div className="flex flex-col md:flex-row gap-4">
-            <div className="w-full h-[100px] md:w-[187px] lg:h-[300px] bg-white rounded-lg">
+            <div className="w-full h-[100px] md:w-[187px] lg:h-[300px] shadow-xl bg-white rounded-lg">
               <div className="flex gap-1 pb-[20px] pt-[10px] ml-[10px]">
                 <Image src={Yellow} alt="Tik" className="w-[20px] md:w-[24px]" />
                 <p className="text-[14px] md:text-[16px] font-medium">Оплата и Доставка</p>
               </div>
             </div>
 
-            <div className="w-full md:w-[714px] bg-white rounded-lg">
+            <div className="w-full md:w-[714px] shadow-xl bg-white rounded-lg">
               <p className="text-[20px] md:text-[24px] font-semibold pt-[20px] md:pt-[40px] ml-[10px] md:ml-[50px]">
                 Способы оплаты
               </p>

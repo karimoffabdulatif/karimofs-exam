@@ -10,7 +10,7 @@ const Index = () => {
       <p className="flex justify-center lg:justify-start text-[24px] sm:text-[32px] font-medium pt-[86px] mb-6">Примущества</p>
 
       <div className="flex flex-wrap gap-6 justify-center sm:justify-between mb-[100px]">
-        <div className="bg-white w-full sm:w-[45%] md:w-[30%] lg:w-[22%] rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
+        <div className="bg-white w-full shadow-xl sm:w-[45%] md:w-[30%] lg:w-[22%] rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
           <div className="pt-[64px] ml-[72px] relative">
             <div className="w-[26px] h-[26px] bg-[#FBD029] rounded-lg"></div>
             <Image
@@ -24,7 +24,7 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="bg-white w-full sm:w-[45%] md:w-[30%] lg:w-[22%] rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
+        <div className="bg-white shadow-xl w-full sm:w-[45%] md:w-[30%] lg:w-[22%] rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
           <div className="pt-[64px] ml-[72px] relative">
             <div className="w-[26px] h-[26px] bg-[#FBD029] rounded-lg"></div>
             <Image
@@ -38,7 +38,7 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="bg-white w-full sm:w-[45%] md:w-[30%] lg:w-[22%] rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
+        <div className="bg-white shadow-xl w-full sm:w-[45%] md:w-[30%] lg:w-[22%] rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
           <div className="pt-[64px] ml-[72px] relative">
             <div className="w-[26px] h-[26px] bg-[#FBD029] rounded-lg"></div>
             <Image
@@ -52,7 +52,7 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="bg-white w-full sm:w-[45%] md:w-[30%] lg:w-[22%] rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
+        <div className="bg-white shadow-xl w-full sm:w-[45%] md:w-[30%] lg:w-[22%] rounded-lg group transition-transform duration-300 ease-in-out hover:scale-105">
           <div className="pt-[64px] ml-[72px] relative">
             <div className="w-[26px] h-[26px] bg-[#FBD029] rounded-lg"></div>
             <Image
