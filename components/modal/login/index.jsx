@@ -9,8 +9,8 @@ import Alert from "@mui/material/Alert";
 
 const Index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("xasannosirov094@gmail.com");
+  const [password, setPassword] = useState("Sehtols@01");
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {
