@@ -84,10 +84,10 @@ const ProductCard = () => {
   }
 
   return (
-    <div className="bg-custom-gray bg-[#F2F2F2] p-[20px]">
+    <div className=" bg-custom-gray bg-[#F2F2F2] p-[20px]">
       <div className="container mx-auto">
         <div className="flex flex-col gap-[40px] lg:flex-row">
-          <div className="w-full max-w-[713px] h-auto rounded-lg bg-white p-4">
+          <div className="w-full -ml-1 lg:-ml-0 max-w-[713px] h-auto rounded-lg bg-white p-4">
             <div className="flex justify-between items-center pt-[20px] pb-[15px]">
               <h1 className="text-[24px] font-medium text-[#000]">
                 Ваша корзина

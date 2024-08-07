@@ -156,7 +156,7 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="pl-6  lg:grid mb-[50px]  md:flex flex-wrap md:justify-between mt-5 lg:mb-4">
+          <div className="pl-1 lg:pl-6  lg:grid mb-[50px]  md:flex flex-wrap md:justify-between mt-5 lg:mb-4">
             <WishlistCard />
           </div>
        

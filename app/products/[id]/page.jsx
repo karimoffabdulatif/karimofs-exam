@@ -135,7 +135,7 @@ const Index = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap md:flex-nowrap justify-between mb-[81px]">
+      <div className="flex flex-wrap  md:flex-nowrap gap-10 mb-[81px]">
         <div className="w-full md:w-auto mb-4 md:mb-0">
           <p className="text-[24px] md:text-[32px] font-medium mb-[31px]">Описание</p>
           <div className="bg-white py-[20px] md:py-[40px] pr-[20px] md:pr-[140px] pl-[20px] md:pl-[50px] rounded-lg">
@@ -175,33 +175,18 @@ const Index = () => {
           <p className="text-[24px] md:text-[32px] font-medium mb-[31px]">Отзыви</p>
           <div className="bg-white py-[20px] md:py-[40px] pr-[20px] md:pr-[140px] pl-[20px] md:pl-[50px] rounded-lg">
             <p className="text-[20px] md:text-[24px] font-medium mb-[28px]">
-              Гантель виниловая, 2 х 3 кг
+            Напишите своё мнение, это нам очень важно!
             </p>
-            <p className="text-[14px] md:text-[16px] w-full md:w-[371px] mb-[53px]">
-              В составе томатов в большом количестве содержатся сахара,
-              клетчатка, пектины, бета-каротин, витамины.
-            </p>
-            <div className="flex flex-wrap gap-14">
-              <div>
-                <div className="mb-[30px]">
-                  <p className="text-[18px] md:text-[20px] font-semibold">Вес гантела:</p>
-                  <p>5кг</p>
-                </div>
-                <div>
-                  <p className="text-[18px] md:text-[20px] font-semibold">Вес гантела:</p>
-                  <p>5кг</p>
-                </div>
+            <div>
+            <textarea placeholder="Поделитесь с нами вашими мыслями" className="border mb-[10px] p-1 pl-4  border-black rounded-md border-spacing-1 w-[400px]"></textarea>
+            <button className="w-[100px] h-[30px] rounded-md mb-[20px] bg-[#FBD029] hover:bg-[#bba447]">Отправить</button>
+            </div>
+            <div >
+              <div className="w-[400px] h-[100px]  border border-1 border-black">
+               
+               
               </div>
-              <div>
-                <div className="mb-[30px]">
-                  <p className="text-[18px] md:text-[20px] font-semibold">Цвета:</p>
-                  <p>Синий, Красный</p>
-                </div>
-                <div>
-                  <p className="text-[18px] md:text-[20px] font-semibold">Цвета:</p>
-                  <p>Синий, Красный</p>
-                </div>
-              </div>
+              
             </div>
           </div>
         </div>
@@ -209,8 +194,8 @@ const Index = () => {
 
       <div>
         <p className="text-[24px] md:text-[32px] font-medium mb-10">Рекомендованные продукты</p>
-        <div className="flex flex-wrap md:flex-nowrap justify-between gap-5">
-          {commentsProduct.slice(0).map((item, index) => (
+        <div className="flex flex-wrap  justify-between gap-5">
+          {commentsProduct.slice(0, 1).map((item, index) => (
             <CardComment key={index} {...item} />
           ))}
         </div>

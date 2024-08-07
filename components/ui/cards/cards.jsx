@@ -115,7 +115,7 @@ const Index = () => {
   };
 
   return (
-    <section className="mb-[18px]">
+    <section className="pl-2 lg:pl-0 mb-[18px]">
       <div className="flex flex-wrap justify-between gap-4">
         {data.map((product) => (
           <div

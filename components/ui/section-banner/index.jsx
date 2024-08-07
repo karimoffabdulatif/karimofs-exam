@@ -16,7 +16,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
 export default function Index() {
   return (
-    <div className=" mx-auto px-2 container lg:mx-auto lg:pt-[10px] pb-[40px] lg:mt-[20px]">
+    <div className=" mx-auto px-2 container lg:mx-auto  pb-[40px] lg:mt-[20px]">
       <div className=" mb-[-130px] lg:w-full h-[350px] mt-[50px] lg:mb-[80px]">
         <Swiper
           spaceBetween={30}

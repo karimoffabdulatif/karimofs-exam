@@ -175,7 +175,7 @@ const Index = () => {
 
 
 
-          <div className="pl-6  lg:grid mb-[50px]  md:flex flex-wrap md:justify-between mt-5 lg:mb-4">
+          <div className="pl-3  lg:grid mb-[50px]  md:flex flex-wrap md:justify-between mt-5 lg:mb-4">
 
               <Cards/>
 

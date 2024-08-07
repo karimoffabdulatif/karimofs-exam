@@ -65,7 +65,7 @@ const Index = () => {
   return (
     <>
       <button
-        className="w-[40px] h-[40px]  lg:w-[46px] lg:h-[46px] bg-[#F2F2F2] hover:bg-yellow-300 rounded-sm flex items-center justify-center"
+        className="w-[40px] h-[40px] shadow-lg  lg:w-[46px] lg:h-[46px] bg-[#F2F2F2] hover:bg-yellow-300 rounded-sm flex items-center justify-center"
         onClick={showModal}
       >
         <Image src={User} alt="image" />

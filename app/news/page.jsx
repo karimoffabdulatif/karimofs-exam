@@ -112,8 +112,8 @@ const Index = () => {
           )}
           <div className="pb-[40px] md:pb-[80px]">
             <p className="text-[24px] md:text-[32px] font-medium mb-6">Акция</p>
-            <div className="flex flex-wrap justify-center gap-8 md:justify-start">
-              {products.map(product => (
+            <div className="pl-3 lg:pl-0 flex flex-wrap justify-center gap-8 md:justify-start">
+              {products.slice(0, 1).map(product => (
                 <Product_Cards key={product.id} title={product.title} description={product.description} />
               ))}
             </div>
